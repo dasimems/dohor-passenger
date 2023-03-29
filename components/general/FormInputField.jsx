@@ -5,11 +5,11 @@ import {
   TouchableOpacity,
   Keyboard
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { blackColor } from "../../assets/colors";
 import { lato } from "../../fonts";
 
-const FormInputField = ({
+const FormInputField = React.forwardRef(({
   label,
   labelStyle,
   inputStyle,
@@ -25,9 +25,13 @@ const FormInputField = ({
   floatRightIcon,
   rightIconAction,
   leftIconAction,
+  removePlaceholder,
+  disableKeyboardAutoHide,
   ...props
-}) => {
+}, ref) => {
 
+  const [leftIconStyle, setLeftIconStyle] = useState(15)
+  const [rightIconStyle, setRightIconStyle] = useState(15)
  
   return (
     <View style={{ ...style }}>
@@ -52,19 +56,26 @@ const FormInputField = ({
       >
 
         <TextInput
-          placeholder={placeholder ? placeholder : "Input"}
+          ref={ref}
+          placeholder={!removePlaceholder? placeholder ? placeholder : "Input" : ""}
           placeholderTextColor={
             placeholderTextColor ? placeholderTextColor : blackColor.opacity200
           }
           cursorColor={cursorColor ? cursorColor : blackColor.opacity300}
-          onBlur={Keyboard.dismiss}
+          onBlur={() => {
+            if(!disableKeyboardAutoHide){
+
+              Keyboard.dismiss
+            }
+          
+          }}
           style={{
             borderWidth: 1,
             borderColor: blackColor.opacity200,
             borderRadius: 10,
             paddingHorizontal: 15,
-            paddingLeft: floatLeftIcon? 36 : 15,
-            paddingRight: floatRightIcon? 32 : 15,
+            paddingLeft: leftIconStyle,
+            paddingRight: rightIconStyle,
             paddingVertical: 10,
             flex: 1,
             fontFamily: lato.regular.default,
@@ -75,12 +86,18 @@ const FormInputField = ({
         />
 
         {floatLeftIcon && <TouchableOpacity
+         onLayout={(event)=>{
+            var { width } = event.nativeEvent.layout;
+            setLeftIconStyle(width)
+
+          }}
           style={{
             position: "absolute",
             left: 0,
-            bottom: 0,
+            top: 0,
             paddingHorizontal: 10,
-            paddingVertical: 10,
+            paddingRight: 5,
+            height: "100%",
             alignItems: "center",
             justifyContent: "center",
             ...floatIconStyle,
@@ -98,12 +115,19 @@ const FormInputField = ({
         </TouchableOpacity>}
 
         {floatRightIcon && <TouchableOpacity
+
+          onLayout={(event)=>{
+            var { width } = event.nativeEvent.layout;
+            setRightIconStyle(width)
+
+          }}
           style={{
             position: "absolute",
             right: 0,
             bottom: 0,
             paddingHorizontal: 10,
-            paddingVertical: 10,
+            paddingRight: 5,
+            height: "100%",
             alignItems: "center",
             justifyContent: "center",
             ...floatIconStyle,
@@ -124,6 +148,10 @@ const FormInputField = ({
 
     </View>
   );
-};
+});
+
+
+
+FormInputField.displayName = "Input Field";
 
 export default FormInputField;

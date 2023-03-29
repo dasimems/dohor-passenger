@@ -4,6 +4,17 @@ export const NavNames = {
     label: "Getting Started",
     navShown: false
   },
+
+  Login: {
+    name: "Login",
+    label: "Login",
+    navShown: false
+  },
+  OTP: {
+    name: "OTP",
+    label: "OTP",
+    navShown: false
+  },
   Navigation: {
     name: "Navigation",
     label: "Navigation",
@@ -24,3 +35,5 @@ export const NavNames = {
 };
 
 export const allNav = Object.keys(NavNames).map(nav => NavNames[nav]);
+
+export const padding = 15;

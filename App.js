@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Providers, ScreenContainer } from './components';
-import { GettingStarted } from './screens';
+import { GettingStarted, Login, Navigation, OTP } from './screens';
 import { NavNames } from './data/general';
 
 
@@ -33,16 +33,15 @@ export default function App() {
           <NavigationContainer>
             <Stack.Navigator>
               <Stack.Group screenOptions={{
-                  animation:"fade_from_bottom",
+                  animation:"slide_from_right",
                   headerShown: false
 
                 }}>
 
-                <Stack.Screen options={{
-                  animation:"fade_from_bottom",
-                  headerShown: false
-
-                }} name={NavNames.GettingStarted.name} component={GettingStarted} />
+                <Stack.Screen name={NavNames.Navigation.name} component={Navigation} />
+                <Stack.Screen name={NavNames.GettingStarted.name} component={GettingStarted} />
+                <Stack.Screen name={NavNames.Login.name} component={Login} />
+                <Stack.Screen name={NavNames.OTP.name} component={OTP} />
 
               </Stack.Group>
             </Stack.Navigator>

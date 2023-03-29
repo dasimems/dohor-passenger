@@ -24,7 +24,8 @@ import {
   FileClock,
   VerifiedIcon,
   StopCircle,
-  Compass
+  Compass,
+  ChevronDown
 } from "lucide-react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
@@ -44,6 +45,10 @@ export const ArrowLeft = ({size, color}) => {
 
 export const AngleLeft = ({size, color}) => {
     return <ChevronLeft size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+export const AngleDown = ({size, color}) => {
+    return <ChevronDown size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
 export const Wallet = ({size, color}) => {

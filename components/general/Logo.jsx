@@ -3,7 +3,7 @@ import React from 'react'
 import { bauhs93, lato } from '../../fonts'
 import { logoImage } from '../../assets/images'
 
-const Logo = ({image, imageSize}) => {
+const Logo = ({image, imageSize, fontSize}) => {
   return (
     <View style={{
         alignItems: "center",
@@ -24,10 +24,10 @@ const Logo = ({image, imageSize}) => {
           <Text style={{
             textAlign: "center",
             fontFamily: bauhs93,
-            fontSize: 33
+            fontSize: fontSize? fontSize : 33
           }}>PAXI</Text>
           <Text style={{
-            fontSize: 16,
+            fontSize: fontSize? (fontSize/2) : 16,
             textAlign: "center",
             fontFamily: lato.regular.italic
           }}>Driver</Text>
