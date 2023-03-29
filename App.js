@@ -2,6 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { lato } from './fonts';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Providers } from './components';
+import { GettingStarted } from './screens';
+import { NavNames } from './data/general';
+
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 
@@ -17,7 +25,20 @@ export default function App() {
   return (
     <>
 
-      {fontsLoaded && <></>}
+      {fontsLoaded && <Providers>
+
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Group>
+
+              <Stack.Screen name={NavNames.GettingStarted.name} component={GettingStarted} />
+
+            </Stack.Group>
+          </Stack.Navigator>
+        </NavigationContainer>
+        
+        
+        </Providers>}
     
     </>
   );
