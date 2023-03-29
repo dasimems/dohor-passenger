@@ -5962,6 +5962,13 @@ react-native-gradle-plugin@^0.71.16:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.16.tgz#822bb0c680e03b5df5aa65f2e5ffc2bc2930854a"
   integrity sha512-H2BjG2zk7B7Wii9sXvd9qhCVRQYDAHSWdMw9tscmZBqSP62DkIWEQSk4/B2GhQ4aK9ydVXgtqR6tBeg3yy8TSA==
 
+react-native-iconly@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/react-native-iconly/-/react-native-iconly-1.0.12.tgz#44e06d45ea52933055b3e16b22ed7f354e618e83"
+  integrity sha512-HwjgSXyJrSk/TcCCbSNCNySWSst4uLInxxjG7vpCKG/zT4I4tYetiLdaFNp/uPcMEb3ZuaQWXJe9H+fMfaKhtA==
+  dependencies:
+    react-native-svg "^12.1.0"
+
 react-native-safe-area-context@4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.5.0.tgz#9208313236e8f49e1920ac1e2a2c975f03aed284"
@@ -5991,7 +5998,7 @@ react-native-svg-transformer@^1.0.0:
     "@svgr/plugin-svgo" "^6.1.2"
     path-dirname "^1.0.2"
 
-react-native-svg@13.4.0:
+react-native-svg@13.4.0, "react-native-svg@13.4.0 ", react-native-svg@^12.1.0:
   version "13.4.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.4.0.tgz#82399ba0956c454144618aa581e2d748dd3f010a"
   integrity sha512-B3TwK+H0+JuRhYPzF21AgqMt4fjhCwDZ9QUtwNstT5XcslJBXC0FoTkdZo8IEb1Sv4suSqhZwlAY6lwOv3tHag==
