@@ -1,10 +1,10 @@
 import { View, Text, TouchableOpacity, Pressable, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { blackColor, secondaryColor } from '../../assets/colors'
-import { poppins } from '../../assets/fonts'
+import { lato } from '../../fonts'
 import { loadingImage } from '../../assets/images'
 
-const Button = ({loading, disabled, text, onPress, style, children, textColor,  loadingStyle, loaderSize, fontSize}) => {
+const Button = ({loading, disabled, text, onPress, style, children, textColor,  loadingStyle, loaderSize, fontSize, fontFamily}) => {
   return (
 
     <>
@@ -37,7 +37,7 @@ const Button = ({loading, disabled, text, onPress, style, children, textColor,  
                         <Text style={{
                             color: blackColor.opacity400,
                             fontSize: fontSize? fontSize: 16,
-                            fontFamily: poppins.regular
+                            fontFamily: fontFamily? fontFamily : lato.regular.default
                         }}>{text? text: "Submitting"}</Text>
 
                     )}
@@ -65,7 +65,7 @@ const Button = ({loading, disabled, text, onPress, style, children, textColor,  
                             style={{
                                 color: textColor? textColor : "black",
                                 fontSize: fontSize? fontSize: 16,
-                                fontFamily: poppins.regular
+                                fontFamily: fontFamily? fontFamily : lato.regular.default
                             }}
                         >{text? text: "Submit"}</Text>
 

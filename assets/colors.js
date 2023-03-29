@@ -1,14 +1,14 @@
 export const primaryColor = {
-    default: "rgb(3,73,11)",
-    opacity100: "rgba(3,73,11, .1)",
-    opacity200: "rgba(3,73,11, .2)",
-    opacity300: "rgba(3,73,11, .3)",
-    opacity400: "rgba(3,73,11, .4)",
-    opacity500: "rgba(3,73,11, .5)",
-    opacity600: "rgba(3,73,11, .6)",
-    opacity700: "rgba(3,73,11, .7)",
-    opacity800: "rgba(3,73,11, .8)",
-    opacity900: "rgba(3,73,11, .9)",
+    default: "rgb(65, 105, 225)",
+    opacity100: "rgba(65, 105, 225, .1)",
+    opacity200: "rgba(65, 105, 225, .2)",
+    opacity300: "rgba(65, 105, 225, .3)",
+    opacity400: "rgba(65, 105, 225, .4)",
+    opacity500: "rgba(65, 105, 225, .5)",
+    opacity600: "rgba(65, 105, 225, .6)",
+    opacity700: "rgba(65, 105, 225, .7)",
+    opacity800: "rgba(65, 105, 225, .8)",
+    opacity900: "rgba(65, 105, 225, .9)",
 }
 
 export const whiteColor = {

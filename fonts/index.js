@@ -17,3 +17,5 @@ export const lato = {
     },
 
 }
+
+export const bauhs93 = "BAUHS93"

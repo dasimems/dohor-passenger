@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
-import { lato } from './fonts';
+import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Providers } from './components';
+import { Providers, ScreenContainer } from './components';
 import { GettingStarted } from './screens';
 import { NavNames } from './data/general';
 
@@ -20,6 +20,7 @@ export default function App() {
     [lato.black.italic]: require("./fonts/Lato-BlackItalic.ttf"),
     [lato.bold.default]: require("./fonts/Lato-Bold.ttf"),
     [lato.bold.italic]: require("./fonts/Lato-BoldItalic.ttf"),
+    [bauhs93]: require("./fonts/BAUHS93.ttf"),
   });
 
   return (
@@ -27,15 +28,28 @@ export default function App() {
 
       {fontsLoaded && <Providers>
 
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Group>
+        <ScreenContainer>
 
-              <Stack.Screen name={NavNames.GettingStarted.name} component={GettingStarted} />
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Group screenOptions={{
+                  animation:"fade_from_bottom",
+                  headerShown: false
 
-            </Stack.Group>
-          </Stack.Navigator>
-        </NavigationContainer>
+                }}>
+
+                <Stack.Screen options={{
+                  animation:"fade_from_bottom",
+                  headerShown: false
+
+                }} name={NavNames.GettingStarted.name} component={GettingStarted} />
+
+              </Stack.Group>
+            </Stack.Navigator>
+          </NavigationContainer>
+
+        </ScreenContainer>
+
         
         
         </Providers>}
