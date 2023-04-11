@@ -4,7 +4,7 @@ import LottieView from "lottie-react-native";
 import { SomethingWentWrongLottieFile } from '../assets/lotties';
 import { lato } from '../fonts';
 import { padding } from '../data/general';
-import { CLOSE_MODAL, OPEN_MODAL, SET_MODAL_CONTENT, SET_MODAL_HEIGHT, SET_MODAL_STYLES } from '../data/_actions';
+import { CLOSE_CAMERA, CLOSE_MODAL, OPEN_CAMERA, OPEN_MODAL, SET_IMAGE_SELECTED, SET_MODAL_CONTENT, SET_MODAL_HEIGHT, SET_MODAL_STYLES } from '../data/_actions';
 import { Text, View } from 'react-native';
 
 const ActionContext = createContext(actionInitialValue)
@@ -61,6 +61,26 @@ export const ActionProvider = ({children}) => {
       }
     };
 
+
+    const openCamera = () => {
+
+      dispatch({
+        type: OPEN_CAMERA
+      })
+
+    }
+
+    const closeCamera = () => {
+      dispatch({ type: CLOSE_CAMERA });
+    };
+
+    const setImage = (payload) => {
+      dispatch({
+        type: SET_IMAGE_SELECTED,
+        payload
+      })
+    }
+
     const SetModalStyle= (payload) =>{
 
       if(payload){
@@ -72,7 +92,7 @@ export const ActionProvider = ({children}) => {
 
     }
 
-  return <ActionContext.Provider value={{ ...state, openModal, closeModal, setModalContent, setModalHeight, SetModalStyle }}>
+  return <ActionContext.Provider value={{ ...state, openModal, closeModal, setModalContent, setModalHeight, SetModalStyle, openCamera, closeCamera }}>
       {children}
     </ActionContext.Provider>;
 }

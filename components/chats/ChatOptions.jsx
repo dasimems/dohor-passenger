@@ -1,5 +1,4 @@
 import { Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
 import { blackColor, primaryColor, whiteColor } from '../../assets/colors'
 import { lato } from '../../fonts'
 import { CameraIcon, DocumentIcon, ImageIcon } from '../../assets/icons'
@@ -7,11 +6,13 @@ import { useActionContext } from '../../context'
 
 const ChatOptions = () => {
 
-    const {closeModal} = useActionContext();
+    const {closeModal, openCamera} = useActionContext();
 
   return <View style={{ gap: 6 }}>
       <View style={{ width: "100%", borderRadius: 10, paddingVertical: 5, backgroundColor: whiteColor.default }}>
-        <TouchableOpacity style={{ ...styles.optionButtonStyle }}>
+        <TouchableOpacity style={{ ...styles.optionButtonStyle }} onPress={()=>{
+            openCamera();
+        }}>
           <CameraIcon color={primaryColor.default} />
 
           <Text style={{ ...styles.optionTextStyle }}>Camera</Text>

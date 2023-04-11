@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Modal, Providers, ScreenContainer } from './components';
+import { CameraContainer, Modal, Providers, ScreenContainer } from './components';
 import { ChatDetails, Chats, GettingStarted, Login, Navigation, OTP, Profile, Trips } from './screens';
 import { NavNames } from './data/general';
 
@@ -54,6 +54,10 @@ export default function App() {
           </NavigationContainer>
 
         </ScreenContainer>
+
+        
+
+          <CameraContainer />
 
         
         

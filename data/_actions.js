@@ -11,6 +11,9 @@ export const SET_MODAL_HEIGHT ="SET_MODAL_HEIGHT"
 export const OPEN_MODAL ="OPEN_MODAL"
 export const CLOSE_MODAL ="CLOSE_MODAL"
 export const SET_MODAL_STYLES ="SET_MODAL_STYLES"
+export const OPEN_CAMERA = "OPEN_CAMERA"
+export const CLOSE_CAMERA = "CLOSE_CAMERA"
+export const SET_IMAGE_SELECTED = "SET_IMAGE_SELECTED"
 
 
 export const OTP_CODE_ONE = "OTP_CODE_ONE"

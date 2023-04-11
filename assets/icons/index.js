@@ -25,7 +25,8 @@ import {
   VerifiedIcon,
   StopCircle,
   Compass,
-  ChevronDown
+  ChevronDown,
+  RefreshCcw
 } from "lucide-react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -228,4 +229,9 @@ export const CameraIcon = ({size, set, color}) => {
 
 export const ImageIcon = ({size, set, color}) => {
     return <Image2 set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+
+export const ChangeCameraIcon = ({size,  color}) => {
+    return <RefreshCcw size={size ? size : 20} color={color ? color : blackColor.default} />;
 }

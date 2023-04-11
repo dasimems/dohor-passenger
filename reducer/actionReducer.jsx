@@ -1,10 +1,12 @@
-import { CLOSE_MODAL, OPEN_MODAL, RESET_ACTION_CONTEXT, SET_MODAL_CONTENT, SET_MODAL_HEIGHT, SET_MODAL_STYLES } from "../data/_actions";
+import { CLOSE_CAMERA, CLOSE_MODAL, OPEN_CAMERA, OPEN_MODAL, RESET_ACTION_CONTEXT, SET_MODAL_CONTENT, SET_MODAL_HEIGHT, SET_MODAL_STYLES } from "../data/_actions";
 
 export const initialValue = {
     modalOpened: false,
     modalContent: null,
     modalHeight: "50%",
-    modalStyle: null
+    modalStyle: null,
+    cameraOpened: false,
+    imagSelected: ""
 }
 
 export const reducer= (state, action) =>{
@@ -22,6 +24,12 @@ export const reducer= (state, action) =>{
 
       case SET_MODAL_CONTENT:
         return { ...state, modalContent: payload };
+
+      case OPEN_CAMERA:
+        return { ...state, cameraOpened: true };
+
+      case CLOSE_CAMERA:
+        return { ...state, cameraOpened: false };
 
       case SET_MODAL_HEIGHT:
         return { ...state, modalHeight: payload };
