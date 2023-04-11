@@ -1,5 +1,6 @@
 import MessageCard from "./chatDetails/MessageCard"
 import ChatCard from "./chats/ChatCard"
+import ChatOptions from "./chats/ChatOptions"
 import Button from "./general/Button"
 import CountryFlag from "./general/CountryFlag"
 import CountryList from "./general/CountryList"
@@ -35,5 +36,6 @@ export {
     MessageCard,
     Map,
     Modal,
-    CountryList
+    CountryList,
+    ChatOptions
 }

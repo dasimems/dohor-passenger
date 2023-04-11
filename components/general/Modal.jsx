@@ -5,7 +5,7 @@ import { useActionContext } from '../../context';
 
 const Modal = () => {
 
-    const { modalOpened, modalContent, modalHeight, closeModal } = useActionContext();
+    const { modalOpened, modalContent, modalHeight, closeModal, modalStyle } = useActionContext();
 
   return (
     <NativeModal
@@ -50,6 +50,7 @@ const Modal = () => {
                         borderTopRightRadius: 40,
                         paddingVertical: 20,
                         paddingHorizontal: 15,
+                        ...modalStyle
                     }}
                 >
 

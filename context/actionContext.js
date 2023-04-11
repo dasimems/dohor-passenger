@@ -61,7 +61,18 @@ export const ActionProvider = ({children}) => {
       }
     };
 
-  return <ActionContext.Provider value={{ ...state, openModal, closeModal, setModalContent, setModalHeight }}>
+    const SetModalStyle= (payload) =>{
+
+      if(payload){
+        dispatch({
+          type: SET_MODAL_STYLES,
+          payload
+        })
+      }
+
+    }
+
+  return <ActionContext.Provider value={{ ...state, openModal, closeModal, setModalContent, setModalHeight, SetModalStyle }}>
       {children}
     </ActionContext.Provider>;
 }

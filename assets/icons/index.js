@@ -39,7 +39,10 @@ import {
   Star,
   User as UserIconly,
   Send as SendIconly,
-  Logout as LogoutIconly
+  Logout as LogoutIconly,
+  Document,
+  Camera,
+  Image2
 } from "react-native-iconly";
 import { X } from "lucide-react-native";
 
@@ -212,4 +215,17 @@ export const LogOutIcon = ({size, set, color}) => {
 
 export const CancelIcon2 = ({size, color}) => {
     return <X size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+export const DocumentIcon = ({size, set, color}) => {
+    return <Document set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+export const CameraIcon = ({size, set, color}) => {
+    return <Camera set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+
+export const ImageIcon = ({size, set, color}) => {
+    return <Image2 set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }

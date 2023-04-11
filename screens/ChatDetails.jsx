@@ -1,12 +1,13 @@
 import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React, { useEffect, useState } from "react";
-import { Button, FormInputField, LoggedInContainer, Logo, MessageCard, Nav, RoundedImage } from "../components";
+import React, { useCallback, useEffect, useState } from "react";
+import { Button, ChatOptions, FormInputField, LoggedInContainer, Logo, MessageCard, Nav, RoundedImage } from "../components";
 import { blackColor, primaryColor, successColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { AddIcon, AngleLeft, SendIcon2 } from "../assets/icons";
 import { padding } from "../data/general";
 import { chats } from "../data/chatData";
+import { useActionContext } from "../context";
 
 const Header= ({image, name, status}) => {
     const {goBack} = useNavigation();
@@ -74,9 +75,23 @@ const Header= ({image, name, status}) => {
 
 const ChatDetails = () => {
   const { goBack,navigate } = useNavigation();
+  const {openModal } = useActionContext();
   const {params} = useRoute()
   const [chatDetails, setChatDetails] = useState(null)
   const [messageList, setMessageList] = useState([])
+
+  const openOptions = useCallback(() => {
+
+    openModal({
+        content: <ChatOptions />,
+        height: "auto",
+        styles: {
+            backgroundColor: "transparent",
+            padding,
+        }
+    });
+
+  }, [])
 
   useEffect(()=>{
 
@@ -139,7 +154,9 @@ const ChatDetails = () => {
             gap: 15
         }}>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{
+                openOptions();
+            }}>
 
                 <AddIcon color={primaryColor.default} size={25} />
 
