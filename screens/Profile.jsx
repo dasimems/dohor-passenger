@@ -1,11 +1,11 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Button, LoggedInContainer, Logo, Nav, RoundedImage } from "../components";
-import { blackColor, primaryColor, whiteColor } from "../assets/colors";
+import { blackColor, dangerColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
-import { AngleLeft, StarIcon } from "../assets/icons";
-import { padding } from "../data/general";
+import { AngleLeft, LogOutIcon, StarIcon } from "../assets/icons";
+import { NavNames, padding } from "../data/general";
 import { MaleAvatarOne } from "../assets/images";
 
 const Header = () => {
@@ -42,6 +42,9 @@ const Header = () => {
 }
 
 const Profile = () => {
+    
+  const {  navigate } = useNavigation();
+
   return (
     <LoggedInContainer
         header={<Header />}
@@ -101,7 +104,8 @@ const Profile = () => {
 
             <View style={{
                 marginTop: 20,
-                gap: 30
+                gap: 30,
+                flex: 1
             }}>
                 <View style={{
                     ...styles.accountContentStyle
@@ -136,7 +140,32 @@ const Profile = () => {
                     }}>+(234) 903-3663-4645</Text>
                 </View>
             </View>
+
         </ScrollView>
+        <View style={{
+            alignItems: "center",
+            paddingVertical: 20
+        }}>
+            <TouchableOpacity style={{
+                paddingVertical: 15,
+                paddingHorizontal: 20,
+                backgroundColor: dangerColor.opacity600,
+                borderRadius: 10,
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 10
+            }} onPress={()=>{
+                navigate(NavNames.Login.name)
+            }}>
+
+                <Text style={{
+                    fontFamily: lato.bold.default,
+                }}>Log out</Text>
+
+                <LogOutIcon />
+
+            </TouchableOpacity>
+        </View>
     </LoggedInContainer>
   );
 };

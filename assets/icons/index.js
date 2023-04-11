@@ -31,7 +31,16 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from "@expo/vector-icons";
 import { blackColor } from "../colors";
-import { Activity, Chat, CloseSquare, Plus, Star, User as UserIconly, Send as SendIconly } from "react-native-iconly";
+import {
+  Activity,
+  Chat,
+  CloseSquare,
+  Plus,
+  Star,
+  User as UserIconly,
+  Send as SendIconly,
+  Logout as LogoutIconly
+} from "react-native-iconly";
 
 export const Settings = ({size, color}) => {
     return <SettingsIcon size={size? size : 20} color={color? color : blackColor.default} />
@@ -191,6 +200,10 @@ export const SendIcon2 = ({size, set, color}) => {
     return <SendIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
 
-export const CarIcon = ({size, set, color}) => {
+export const CarIcon = ({size, color}) => {
     return <FontAwesome5 name="car" size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+export const LogOutIcon = ({size, set, color}) => {
+    return <LogoutIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
