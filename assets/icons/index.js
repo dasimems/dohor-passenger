@@ -28,6 +28,7 @@ import {
   ChevronDown
 } from "lucide-react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from "@expo/vector-icons";
 import { blackColor } from "../colors";
 import { Activity, Chat, CloseSquare, Plus, Star, User as UserIconly, Send as SendIconly } from "react-native-iconly";
@@ -188,4 +189,8 @@ export const AddIcon = ({size, set, color}) => {
 
 export const SendIcon2 = ({size, set, color}) => {
     return <SendIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+export const CarIcon = ({size, set, color}) => {
+    return <FontAwesome5 name="car" size={size ? size : 20} color={color ? color : blackColor.default} />;
 }

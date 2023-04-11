@@ -45,6 +45,7 @@ const Profile = () => {
   return (
     <LoggedInContainer
         header={<Header />}
+        navHidden
     >
 
         <ScrollView contentContainerStyle={{
