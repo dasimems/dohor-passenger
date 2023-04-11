@@ -2,7 +2,8 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { blackColor, whiteColor } from '../../assets/colors'
 
-const RoundedImage = ({size, imagePadding, image, style, imageContainerBackground, imageParentBackground, ...props}) => {
+const RoundedImage = ({size, url, imagePadding, image, style, imageContainerBackground, imageParentBackground, ...props}) => {
+
   return (
     <View style={{
         width: size? size: 48,
@@ -22,7 +23,7 @@ const RoundedImage = ({size, imagePadding, image, style, imageContainerBackgroun
       >
 
         <Image
-          source={image}
+          source={url? {uri: image} : image}
           style={{
             width: "100%",
             height: "100%",

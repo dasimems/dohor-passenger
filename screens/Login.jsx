@@ -1,6 +1,6 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useCallback } from "react";
-import { Button, CountrySelectDetails, FormInputField, Logo2 } from "../components";
+import { Button, CountryList, CountrySelectDetails, FormInputField, Logo2 } from "../components";
 import { blackColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
@@ -15,7 +15,7 @@ const Login = () => {
     const {openModal} = useActionContext();
 
     const showCountryList = useCallback(()=>{
-      openModal();
+      openModal({content: <CountryList />, height: "80%"});
     }, [])
 
   return (
@@ -93,6 +93,30 @@ const Login = () => {
         }}
         text="CONTINUE"
       />
+
+      {/* <View style={{
+        alignItems: "center",
+        paddingTop: 20,
+        paddingBottom: 5,
+        flexDirection: "row",
+        gap: 5
+      }}>
+        <Text style={{
+          fontFamily: lato.bold.default,
+          color: blackColor.opacity600
+        }}>Don't have an account? </Text>
+
+        <TouchableOpacity onPress={()=>{
+          navigate(NavNames.Register.name)
+        }}>
+
+          <Text style={{
+            fontFamily: lato.bold.default,
+            color: primaryColor.default
+          }}>Register</Text>
+
+        </TouchableOpacity>
+      </View> */}
     </View>
   );
 };

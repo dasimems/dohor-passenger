@@ -21,6 +21,7 @@ import {
   OTP_CODE_TWO
 } from "../data/_actions";
 import { formatSeconds } from "../functions";
+import { NavNames } from "../data/general";
 
 const OTP = () => {
   const { navigate, goBack } = useNavigation();
@@ -46,6 +47,7 @@ const OTP = () => {
 
 
     if(allCode === "5555"){
+      navigate(NavNames.Navigation.name);
 
     }else{
 

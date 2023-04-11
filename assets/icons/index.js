@@ -41,6 +41,7 @@ import {
   Send as SendIconly,
   Logout as LogoutIconly
 } from "react-native-iconly";
+import { X } from "lucide-react-native";
 
 export const Settings = ({size, color}) => {
     return <SettingsIcon size={size? size : 20} color={color? color : blackColor.default} />
@@ -206,4 +207,9 @@ export const CarIcon = ({size, color}) => {
 
 export const LogOutIcon = ({size, set, color}) => {
     return <LogoutIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+
+export const CancelIcon2 = ({size, color}) => {
+    return <X size={size ? size : 20} color={color ? color : blackColor.default} />;
 }

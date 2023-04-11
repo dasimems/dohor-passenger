@@ -6,9 +6,9 @@ export const initialValue = {
   otpCodeTwo: "",
   otpCodeThree: "",
   otpCodeFour: "",
-  phone: "9036634645",
+  phone: "",
   country: {
-    flag: "",
+    flag: "https://flagcdn.com/w320/us.png",
     mobileCode: "1",
     name: "United State",
     countryCode: "US"

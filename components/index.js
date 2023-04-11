@@ -2,6 +2,7 @@ import MessageCard from "./chatDetails/MessageCard"
 import ChatCard from "./chats/ChatCard"
 import Button from "./general/Button"
 import CountryFlag from "./general/CountryFlag"
+import CountryList from "./general/CountryList"
 import CountrySelectDetails from "./general/CountrySelectDetails"
 import FormInputField from "./general/FormInputField"
 import LoggedInContainer from "./general/LoggedInContainer"
@@ -33,5 +34,6 @@ export {
     ChatCard,
     MessageCard,
     Map,
-    Modal
+    Modal,
+    CountryList
 }

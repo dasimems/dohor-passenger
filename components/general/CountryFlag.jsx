@@ -9,7 +9,7 @@ const CountryFlag = ({size, image}) => {
         width: size? size: 35,
         height: size? size: 35,
     }}>
-      <RoundedImage image={image} imagePadding={0.1} imageContainerBackground={whiteColor.default} size="100%" />
+      <RoundedImage url image={image} imagePadding={0.1} imageContainerBackground={whiteColor.default} size="100%" />
     </View>
   )
 }

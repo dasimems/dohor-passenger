@@ -14,7 +14,7 @@ const CountrySelectDetails = ({image}) => {
         alignItems:"center",
         gap: 7
     }}>
-      <CountryFlag />
+      <CountryFlag image={country?.flag} />
       <Text style={{
         color: blackColor.opacity800,
         fontFamily: lato.bold.default

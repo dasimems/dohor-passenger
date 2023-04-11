@@ -1,4 +1,5 @@
 import { ChatIcon, Menu, NavigationIcon, TripsIcon, UserIcon } from "../assets/icons";
+import CountryListJson from "./all_country.json"
 
 export const NavNames = {
   GettingStarted: {
@@ -11,6 +12,13 @@ export const NavNames = {
   Login: {
     name: "Login",
     label: "Login",
+    navShown: false,
+    Icon: Menu
+  },
+
+   Register: {
+    name: "Register",
+    label: "Register",
     navShown: false,
     Icon: Menu
   },
@@ -55,6 +63,9 @@ export const NavNames = {
     Icon: UserIcon
   }
 };
+
+export const countryData = CountryListJson.map(country => ({name: country.name.common, mobileCode: country.idd.root, countryCode: country.cca2, flag: country.flags.png}));
+
 
 export const allNav = Object.keys(NavNames).map(nav => NavNames[nav]);
 export const screenNav = allNav.filter(nav => nav.navShown)
