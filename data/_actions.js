@@ -6,6 +6,11 @@ export const SET_PHONE_NUMBER = "SET_PHONE_NUMBER"
 export const SET_OTP_CODE = "SET_OTP_CODE"
 export const SET_OTP_TOKEN = "SET_OTP_TOKEN"
 export const SET_COUNTRY = "SET_COUNTRY"
+export const SET_MODAL_CONTENT ="SET_MODAL_CONTENT"
+export const SET_MODAL_HEIGHT ="SET_MODAL_HEIGHT"
+export const OPEN_MODAL ="OPEN_MODAL"
+export const CLOSE_MODAL ="CLOSE_MODAL"
+export const SET_MODAL_STYLES ="SET_MODAL_STYLES"
 
 
 export const OTP_CODE_ONE = "OTP_CODE_ONE"

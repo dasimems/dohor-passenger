@@ -1,17 +1,23 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useCallback } from "react";
 import { Button, CountrySelectDetails, FormInputField, Logo2 } from "../components";
 import { blackColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import allStyles from "../assets/stylesheet";
-import { useFormContext } from "../context";
+import { useActionContext, useFormContext } from "../context";
 import { NavNames } from "../data/general";
 
 const Login = () => {
     const {navigate} = useNavigation();
     const {inputStyle} = allStyles;
     const { phone, setPhoneNumber } = useFormContext();
+    const {openModal} = useActionContext();
+
+    const showCountryList = useCallback(()=>{
+      openModal();
+    }, [])
+
   return (
     <View
       style={{
@@ -58,7 +64,10 @@ const Login = () => {
             }}>
                 <FormInputField  inputMode="numeric"  keyboardType="phone-pad" onChangeText={(text)=>{
                     setPhoneNumber(text);
-                }} value={phone} floatLeftIcon={<CountrySelectDetails />} placeholder="Enter your phone number" inputStyle={{
+                }} value={phone} floatLeftIcon={<CountrySelectDetails />} leftIconAction={()=>{
+                  showCountryList();
+
+                }} placeholder="Enter your phone number" inputStyle={{
                     ...inputStyle,
                     borderWidth: 0 
                 }} label="Enter your phone" labelStyle={{

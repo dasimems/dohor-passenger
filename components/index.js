@@ -7,6 +7,7 @@ import FormInputField from "./general/FormInputField"
 import LoggedInContainer from "./general/LoggedInContainer"
 import Logo from "./general/Logo"
 import Logo2 from "./general/Logo2"
+import Modal from "./general/Modal"
 import Nav from "./general/Nav"
 import Providers from "./general/Providers"
 import RoundedImage from "./general/RoundedImage"
@@ -31,5 +32,6 @@ export {
     TripFilter,
     ChatCard,
     MessageCard,
-    Map
+    Map,
+    Modal
 }

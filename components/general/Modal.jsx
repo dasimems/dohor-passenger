@@ -1,7 +1,7 @@
 import { View, Modal as NativeModal, TouchableOpacity, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
-import { blackColor, whiteColor } from '../../assets/colors'
-import { useActionContext } from '../../context'
+import { blackColor, whiteColor } from '../../assets/colors';
+import { useActionContext } from '../../context';
 
 const Modal = () => {
 
