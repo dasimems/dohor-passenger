@@ -9,6 +9,8 @@ import Nav from "./general/Nav"
 import Providers from "./general/Providers"
 import RoundedImage from "./general/RoundedImage"
 import ScreenContainer from "./general/ScreenContainer"
+import TripCard from "./trips/TripCard"
+import TripFilter from "./trips/TripFilter"
 
 export {
     Providers,
@@ -21,5 +23,7 @@ export {
     CountryFlag,
     CountrySelectDetails,
     Nav,
-    LoggedInContainer
+    LoggedInContainer,
+    TripCard,
+    TripFilter
 }

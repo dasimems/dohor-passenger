@@ -7,7 +7,7 @@ import { AngleLeft } from "../../assets/icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { lato } from "../../fonts";
 
-const LoggedInContainer = ({children, header, showBackFunction}) => {
+const LoggedInContainer = ({children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, style, containerStyle}) => {
 
     const {name: screenName} = useRoute();
     const {goBack} = useNavigation();
@@ -15,7 +15,8 @@ const LoggedInContainer = ({children, header, showBackFunction}) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: whiteColor.default
+        backgroundColor: whiteColor.default,
+        ...style
       }}
     >
 
@@ -27,7 +28,8 @@ const LoggedInContainer = ({children, header, showBackFunction}) => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 paddingVertical: 10,
-                paddingHorizontal: padding
+                paddingHorizontal: padding,
+                ...headerStyle
             }}>
 
                 <View style={{
@@ -44,8 +46,10 @@ const LoggedInContainer = ({children, header, showBackFunction}) => {
                     </TouchableOpacity>}
 
                     <Text style={{
-                        fontFamily: lato.bold.default
-                    }}>{screenName}</Text>
+                        fontFamily: lato.black.default,
+                        fontSize: 20,
+                        ...headerTextStyle
+                    }}>{headerText? headerText : screenName}</Text>
                 </View>
 
 
@@ -58,13 +62,14 @@ const LoggedInContainer = ({children, header, showBackFunction}) => {
       <View
         style={{
           flex: 1,
-          paddingHorizontal: padding
+          paddingHorizontal: padding,
+          ...containerStyle
         }}
       >
         {children}
       </View>
 
-      <Nav />
+      {!navHidden && <Nav />}
     </View>
   );
 };

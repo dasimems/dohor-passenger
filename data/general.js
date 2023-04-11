@@ -1,4 +1,4 @@
-import { ChatIcon, Menu, NavigationIcon, TripsIcon } from "../assets/icons";
+import { ChatIcon, Menu, NavigationIcon, TripsIcon, UserIcon } from "../assets/icons";
 
 export const NavNames = {
   GettingStarted: {
@@ -39,6 +39,13 @@ export const NavNames = {
     label: "Chat",
     navShown: true,
     Icon: ChatIcon
+  },
+
+  Profile: {
+    name: "Profile",
+    label: "Profile",
+    navShown: true,
+    Icon: UserIcon
   }
 };
 

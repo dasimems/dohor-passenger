@@ -30,7 +30,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { blackColor } from "../colors";
-import { Activity, Chat } from "react-native-iconly";
+import { Activity, Chat, Star, User as UserIconly } from "react-native-iconly";
 
 export const Settings = ({size, color}) => {
     return <SettingsIcon size={size? size : 20} color={color? color : blackColor.default} />
@@ -162,10 +162,18 @@ export const NavigationIcon = ({size, color}) => {
     return <Compass size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
-export const TripsIcon = ({size, color}) => {
-    return <Activity set="light" size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+export const TripsIcon = ({size, set, color}) => {
+    return <Activity set={set? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
 
-export const ChatIcon = ({size, color}) => {
-    return <Chat set="light" size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+export const ChatIcon = ({size, set, color}) => {
+    return <Chat set={set? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+export const UserIcon = ({size, set, color}) => {
+    return <UserIconly set={set? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+export const StarIcon = ({size, set, color}) => {
+    return <Star set={set? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
