@@ -1,3 +1,4 @@
+import Chats from "./Chats"
 import GettingStarted from "./GettingStarted"
 import Login from "./Login"
 import Navigation from "./Navigation"
@@ -11,5 +12,6 @@ export {
     OTP,
     Navigation,
     Trips,
-    Profile
+    Profile,
+    Chats
 }

@@ -41,10 +41,17 @@ export const NavNames = {
     Icon: ChatIcon
   },
 
+   ChatDetails: {
+    name: "ChatDetails",
+    label: "Chat Details",
+    navShown: false,
+    Icon: ChatIcon
+  },
+
   Profile: {
     name: "Profile",
     label: "Profile",
-    navShown: true,
+    navShown: false,
     Icon: UserIcon
   }
 };

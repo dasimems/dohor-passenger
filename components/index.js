@@ -1,3 +1,4 @@
+import ChatCard from "./chats/ChatCard"
 import Button from "./general/Button"
 import CountryFlag from "./general/CountryFlag"
 import CountrySelectDetails from "./general/CountrySelectDetails"
@@ -25,5 +26,6 @@ export {
     Nav,
     LoggedInContainer,
     TripCard,
-    TripFilter
+    TripFilter,
+    ChatCard
 }
