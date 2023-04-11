@@ -30,7 +30,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { blackColor } from "../colors";
-import { Activity, Chat, CloseSquare, Star, User as UserIconly } from "react-native-iconly";
+import { Activity, Chat, CloseSquare, Plus, Star, User as UserIconly, Send as SendIconly } from "react-native-iconly";
 
 export const Settings = ({size, color}) => {
     return <SettingsIcon size={size? size : 20} color={color? color : blackColor.default} />
@@ -180,4 +180,12 @@ export const StarIcon = ({size, set, color}) => {
 
 export const CancelIcon = ({size, set, color}) => {
     return <CloseSquare set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+export const AddIcon = ({size, set, color}) => {
+    return <Plus set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+export const SendIcon2 = ({size, set, color}) => {
+    return <SendIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }

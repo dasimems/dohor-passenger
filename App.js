@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Providers, ScreenContainer } from './components';
-import { Chats, GettingStarted, Login, Navigation, OTP, Profile, Trips } from './screens';
+import { ChatDetails, Chats, GettingStarted, Login, Navigation, OTP, Profile, Trips } from './screens';
 import { NavNames } from './data/general';
 
 
@@ -45,6 +45,7 @@ export default function App() {
                 <Stack.Screen name={NavNames.Trips.name} component={Trips} />
                 <Stack.Screen name={NavNames.Profile.name} component={Profile} />
                 <Stack.Screen name={NavNames.Chat.name} component={Chats} />
+                <Stack.Screen name={NavNames.ChatDetails.name} component={ChatDetails} />
 
               </Stack.Group>
             </Stack.Navigator>

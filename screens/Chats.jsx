@@ -83,7 +83,7 @@ const Chats = () => {
                 data={chats}
                 extraData={chats}
                 keyExtractor={(_, index)=>index}
-                renderItem={({item: {image, name, status, messages}, index})=>{
+                renderItem={({item: {image, name, status, messages, id}, index})=>{
                     var unreadMessages = 0;
                     var lastMessage = ""
 
@@ -93,7 +93,7 @@ const Chats = () => {
                     }
 
                     return(
-                        <ChatCard image={image} name={name} lastMessage={lastMessage} status={status} unreadMessageCount={unreadMessages} />
+                        <ChatCard id={id} image={image} name={name} lastMessage={lastMessage} status={status} unreadMessageCount={unreadMessages} />
                     )
                 }}
             

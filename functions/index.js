@@ -194,6 +194,7 @@ export const formatDate = (
   return {
       fullDate: fullDate.trim(),
       fullTime: `${fullTime.trim()}${showTimeDifference? ` ${dateObj.timeDifference}`: ""}`,
+      formattedDate: `${fullDate.trim()} ${fullTime.trim()}${showTimeDifference? ` ${dateObj.timeDifference}`: ""}`,
     ...dateObj,
   }
 };

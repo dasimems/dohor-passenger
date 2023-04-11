@@ -39,7 +39,7 @@ export const chats = [
 
     {
         image: MaleAvatarOne,
-        id: 1,
+        id: 2,
         status: "online",
         name: "Seun Ayomid",
         messages: [
@@ -75,7 +75,7 @@ export const chats = [
 
     {
         image: MaleAvatarTwo,
-        id: 1,
+        id: 3,
         status: "",
         name: "Gill Stiff",
         messages: [
@@ -113,7 +113,7 @@ export const chats = [
 
     {
         image: FemaleAvatarOne,
-        id: 1,
+        id: 4,
         status: "",
         name: "Sarah Glit",
         messages: [

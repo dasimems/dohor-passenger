@@ -1,3 +1,4 @@
+import MessageCard from "./chatDetails/MessageCard"
 import ChatCard from "./chats/ChatCard"
 import Button from "./general/Button"
 import CountryFlag from "./general/CountryFlag"
@@ -27,5 +28,6 @@ export {
     LoggedInContainer,
     TripCard,
     TripFilter,
-    ChatCard
+    ChatCard,
+    MessageCard
 }
