@@ -5,19 +5,19 @@ import { blackColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { padding } from "../data/general";
-import { CancelIcon, Search } from "../assets/icons";
+import { AngleLeft, CancelIcon, Search } from "../assets/icons";
 import { chats } from "../data/chatData";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Header = () => {
-    const [searchEnabled, setSearchEnabled] = useState(false)
-    const [searchText, setSearchText] = useState("")
+    const {goBack} = useNavigation();
     return(
 
         <>
 
             
 
-                <View style={{
+                <SafeAreaView style={{
                     paddingVertical: 15,
                     paddingHorizontal: padding,
                     flexDirection: "row",
@@ -25,40 +25,34 @@ const Header = () => {
                     gap: 10
                 }}>
 
-                    {searchEnabled? (
-                        <FormInputField onChangeText={(text)=>{
+                    <View style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: 15
+                    }}>
 
-                            setSearchText(text)
+                        <TouchableOpacity onPress={()=>{
+                            goBack();
+                        }}>
+                            <AngleLeft />
 
-                        }} value={searchText} rightIconAction={()=>{
-                            setSearchEnabled(false)
-                            setSearchText("")
-                        }} floatRightIcon={<CancelIcon set="bold" color={blackColor.opacity600} />} inputStyle={{
-                            paddingVertical: 8,
-                        }} style={{
-                            width: "100%"
-                        }} />
-                    ) : (
+                        </TouchableOpacity>
 
-                        <>
+                        <Text style={{
+                            fontFamily: lato.bold.default,
+                            fontSize: 20,
+                        }}>Messages</Text>
+
+                    </View>
                         
-                            <Text style={{
-                                fontFamily: lato.bold.default,
-                                fontSize: 20,
-                            }}>Messages</Text>
 
-                            <TouchableOpacity onPress={()=>{
-                                setSearchEnabled(true)
-                            }}>
-                                <Search color={blackColor.opacity500} />
-                            </TouchableOpacity>
-                        </>
+                    {/* <TouchableOpacity onPress={()=>{
+                        setSearchEnabled(true)
+                    }}>
+                        <Search color={blackColor.opacity500} />
+                    </TouchableOpacity> */}
 
-
-                    
-                    )}
-
-                </View>
+                </SafeAreaView>
         
         </>
     )
@@ -66,13 +60,32 @@ const Header = () => {
 
 const Chats = () => {
   const { navigate } = useNavigation();
+    const [searchText, setSearchText] = useState("")
   return (
     <LoggedInContainer
         header={<Header />}
     >
+
+        <View>
+            <FormInputField placeholder="Search" onChangeText={(text)=>{
+
+                setSearchText(text)
+
+            }} value={searchText} floatLeftIcon={<Search size={16} color={blackColor.opacity400} />}  rightIconAction={()=>{
+                setSearchText("")
+            }} floatRightIcon={searchText.length > 0? <CancelIcon set="bold" color={blackColor.opacity600} /> : null} inputStyle={{
+                paddingVertical: 8,
+                borderWidth: 0,
+                backgroundColor: blackColor.opacity100
+            }} style={{
+                width: "100%"
+            }} />
+        </View>
+
         <View style={{
             flex: 1,
-            paddingVertical: 15
+            paddingVertical: 15,
+            marginTop: 20
         }}>
 
 

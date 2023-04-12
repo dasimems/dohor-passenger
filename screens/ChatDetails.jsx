@@ -8,16 +8,18 @@ import { AddIcon, AngleLeft, SendIcon2 } from "../assets/icons";
 import { padding } from "../data/general";
 import { chats } from "../data/chatData";
 import { useActionContext } from "../context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Header= ({image, name, status}) => {
     const {goBack} = useNavigation();
     return(
-        <View style={{
+        <SafeAreaView style={{
             paddingVertical: 15, 
             paddingHorizontal: padding,
             borderBottomWidth: 1,
             borderBottomColor: blackColor.opacity100
         }}>
+            
             <View style={{
                 flexDirection: "row",
                 alignItems: "center",
@@ -69,7 +71,7 @@ const Header= ({image, name, status}) => {
 
                 </View>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -154,13 +156,13 @@ const ChatDetails = () => {
             gap: 15
         }}>
 
-            <TouchableOpacity onPress={()=>{
+            {/* <TouchableOpacity onPress={()=>{
                 openOptions();
             }}>
 
                 <AddIcon color={primaryColor.default} size={25} />
 
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <FormInputField multiline style={{flex: 1}} inputStyle={{paddingVertical: 6, borderRadius: 20, backgroundColor: whiteColor.opacity700, borderWidth: 0, maxHeight: 100}} />
 

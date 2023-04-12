@@ -206,6 +206,7 @@ const LoggedInContainer = ({children, header, headerText, headerTextStyle, heade
                   ...headerStyle
               }}>
 
+                <SafeAreaView>
                   <View style={{
                       flexDirection: "row",
                       alignItems: "center",
@@ -225,6 +226,9 @@ const LoggedInContainer = ({children, header, headerText, headerTextStyle, heade
                           ...headerTextStyle
                       }}>{headerText? headerText : screenName}</Text>
                   </View>
+
+                </SafeAreaView>
+
 
 
 

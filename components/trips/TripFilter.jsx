@@ -4,8 +4,8 @@ import { lato } from '../../fonts'
 import { blackColor, primaryColor } from '../../assets/colors'
 
 const TripFilter = ({activeFilter,onChange}) => {
-    const [tripType, setTripType] = useState("ongoing")
-    const filters = ["Ongoing", "Completed", "Cancelled"]
+    const [tripType, setTripType] = useState("completed")
+    const filters = ["Completed", "Cancelled"]
 
     if(!onChange){
         onChange = () => {}
@@ -18,8 +18,8 @@ const TripFilter = ({activeFilter,onChange}) => {
     }, [activeFilter])
 
     useEffect(()=>{
-        setTripType("ongoing");
-        onChange("ongoing")
+        setTripType("completed");
+        onChange("completed")
     }, [])
   return (
     <View style={{
@@ -34,8 +34,7 @@ const TripFilter = ({activeFilter,onChange}) => {
             tripType.toLowerCase() === filter.toLowerCase()? (
                 <Pressable key={index}  style={{
                     ...styles.filterButtonStyle,
-                    borderBottomWidth:  2,
-                    borderBottomColor:  primaryColor.default 
+                    backgroundColor: primaryColor.opacity200
                 }}>
                     <Text style={{
                         ...styles.filterTextStyle,
@@ -70,8 +69,10 @@ export default TripFilter
 const styles = StyleSheet.create({
 
     filterButtonStyle: {
-        paddingHorizontal: 10,
-        paddingVertical: 8
+        padding: 15,
+        flex: 1/2,
+        alignItems: "center",
+        borderRadius: 10
 
     },
     filterTextStyle: {

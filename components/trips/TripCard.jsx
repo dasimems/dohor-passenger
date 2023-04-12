@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { blackColor, dangerColor, pendingColor, successColor, whiteColor } from "../../assets/colors";
 import { formatDate } from "../../functions";
 import { lato } from "../../fonts";
+import { DotIcon, LocationIcon, MoneyIcon } from "../../assets/icons";
 
 const TripCard = ({ date, name, price, image, from, to, status }) => {
   const imageWidth = 50;
@@ -41,76 +42,24 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
           backgroundColor: whiteColor.default,
           // borderColor:blackColor.opacity100,
           // borderWidth:1,
-          padding: 20,
+          padding: 5,
           borderRadius: 15
         }}
       >
-        <Text
-          style={{
-            fontFamily: lato.regular.default,
-            color: blackColor.opacity600
-          }}
-        >
-          {formatDate({ dateFormat: ["DD", "D", "MM", "YY"] }).fullDate}
-        </Text>
+        
 
         <View
           style={{
             gap: 10,
-            marginTop: 20
+            borderBottomColor: blackColor.opacity100,
+            borderBottomWidth: 1,
+            padding: 15,
           }}
         >
-          <View
-            style={{
-              flexDirection: "row",
-              gap: viewGap,
-              alignItems: "center",
-              justifyContent: "space-between"
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "row",
-                gap: viewGap,
-                alignItems: "center"
-              }}
-            >
-              <Image
-                source={image}
-                style={{
-                  backgroundColor: blackColor.opacity100,
-                  width: imageWidth,
-                  height: imageWidth,
-                  borderRadius: 10,
-                  resizeMode: "cover",
-                  
-                }}
-              />
-
-              <Text
-                style={{
-                  fontFamily: lato.black.default,
-                  fontSize: 15
-                }}
-              >
-                {name}
-              </Text>
-            </View>
-
-            <Text
-              style={{
-                fontFamily: lato.bold.default,
-                fontSize: 13
-              }}
-            >
-              {price?.symbol}
-              {price?.amount}
-            </Text>
-          </View>
 
           <View
             style={{
-              height: 100,
+              height: 80,
               flexDirection: "row",
               gap: viewGap,
               alignItems: "flex-end",
@@ -126,7 +75,7 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
 
                 <View
                 style={{
-                    width: imageWidth,
+                    width: "auto",
                     height: "100%",
                     alignItems: "center",
                     gap: 5,
@@ -134,37 +83,30 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
                 >
                 <View
                     style={{
-                    backgroundColor: successColor.default,
-                    width: 14,
-                    height: 14,
-                    borderRadius: 9999
+                      borderRadius: 9999
                     }}
-                />
+                >
+
+                    <DotIcon color={successColor.default} />
+
+                </View>
 
                 <View style={{flex:1, gap: 5 }}>
 
                   <View style={{
-                    width: 2,
-                    height: 6,
-                    backgroundColor: blackColor.default
+                    ...styles.lineStyle
                   }}></View>
 
                   <View style={{
-                    width: 2,
-                    height: 12,
-                    backgroundColor: blackColor.default
+                    ...styles.lineStyle
                   }}></View>
 
                   <View style={{
-                    width: 2,
-                    height: 12,
-                    backgroundColor: blackColor.default
+                    ...styles.lineStyle
                   }}></View>
 
                   <View style={{
-                    width: 2,
-                    height: 12,
-                    backgroundColor: blackColor.default
+                    ...styles.lineStyle
                   }}></View>
 
 
@@ -172,12 +114,12 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
 
                 <View
                     style={{
-                    backgroundColor: dangerColor.default,
-                    width: 18,
-                    height: 18,
+                    // backgroundColor: dangerColor.default,
                     borderRadius: 9999
                     }}
                 />
+
+                    <LocationIcon color={dangerColor.opacity700} set="bold"  />
                 </View>
 
                 <View style={{
@@ -196,11 +138,6 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
                             fontSize: 13,
 
                         }}>{from?.place}</Text>
-                        <Text style={{
-                            fontFamily: lato.regular.default,
-                            fontSize: 10,
-                            color: blackColor.opacity500
-                        }}>{formatDate({date: from?.time, timeFormat: ["H", "M",""], showTimeDifference: true}).fullTime}</Text>
 
                     </View>
 
@@ -215,16 +152,35 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
                             fontSize: 13,
 
                         }}>{to?.place}</Text>
-                        {to && to.time && <Text style={{
-                            fontFamily: lato.regular.default,
-                            fontSize: 10,
-                            color: blackColor.opacity500
-                        }}>{formatDate({date: to?.time, timeFormat: ["H", "M",""], showTimeDifference: true}).fullTime}</Text>}
 
                     </View>
 
 
                 </View>
+            </View>
+
+            
+
+          </View>
+        </View>
+
+          <View style={{
+            padding: 15,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between"
+          }}>
+
+            <View style={{
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 10
+            }}>
+
+              <MoneyIcon />
+
+              <Text>{price?.symbol}{price?.amount}</Text>
+
             </View>
 
             <Text style={{
@@ -234,7 +190,7 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
             }}>{status}</Text>
 
           </View>
-        </View>
+
       </View>
     </View>
   );
@@ -242,4 +198,11 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
 
 export default TripCard;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  lineStyle:{
+    width: 2,
+    height: "15%",
+    backgroundColor: blackColor.opacity500
+
+  }
+});

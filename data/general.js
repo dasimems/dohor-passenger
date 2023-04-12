@@ -48,20 +48,20 @@ export const NavNames = {
     Icon: Wallet2
   },
 
-  History: {
-    name: "History",
+  // History: {
+  //   name: "History",
+  //   label: "History",
+  //   navShown: true,
+  //   profileLink: false,
+  //   Icon: HistoryIcon
+  // },
+
+  Trips: {
+    name: "Trips",
     label: "History",
     navShown: true,
     profileLink: false,
     Icon: HistoryIcon
-  },
-
-  Trips: {
-    name: "Trips",
-    label: "Rides",
-    navShown: true,
-    profileLink: false,
-    Icon: CarIcon
   },
 
   Chat: {

@@ -29,6 +29,7 @@ import {
   RefreshCcw,
   ChevronRight
 } from "lucide-react-native";
+import MoneySvg from "./money.svg"
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Foundation } from "@expo/vector-icons"; 
@@ -51,7 +52,8 @@ import {
   Document,
   Camera,
   Image2,
-  Notification
+  Notification,
+  Location
 } from "react-native-iconly";
 import { X } from "lucide-react-native";
 
@@ -273,8 +275,20 @@ export const SecurityIcon = ({size, set, color}) => {
     return <Lock set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
 
+export const LocationIcon = ({size, set, color}) => {
+    return <Location set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
 
 export const ChangeCameraIcon = ({size,  color}) => {
     return <RefreshCcw size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
+
+export const DotIcon = ({size,  color}) => {
+    return <FontAwesome name="dot-circle-o" size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+export const MoneyIcon = ({size,  color}) => {
+    return <MoneySvg width={size ? size : 20} height={size ? size : 20} />;
+}
+
 
