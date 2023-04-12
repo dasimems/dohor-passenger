@@ -1,4 +1,4 @@
-import { CarIcon, ChatIcon, CustomerSupport, HistoryIcon, HomeIcon, Menu, SecurityIcon, UserIcon, Wallet2 } from "../assets/icons";
+import { CarIcon, ChatIcon, CustomerSupport, HistoryIcon, HomeIcon, Menu, NotificationIcon, SecurityIcon, UserIcon, Wallet2 } from "../assets/icons";
 import CountryListJson from "./all_country.json"
 
 export const NavNames = {
@@ -8,6 +8,14 @@ export const NavNames = {
     navShown: false,
     profileLink: false,
     Icon: Menu
+  },
+
+  Notification: {
+    name: "Notification",
+    label: "Notification",
+    navShown: false,
+    profileLink: false,
+    Icon: NotificationIcon
   },
 
   Login: {

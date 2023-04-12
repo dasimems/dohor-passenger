@@ -74,7 +74,9 @@ const Header = ()=> {
 
       </TouchableOpacity>
 
-      <TouchableOpacity style={{
+      <TouchableOpacity onPress={()=>{
+        navigate(NavNames.Notification.name)
+      }} style={{
         backgroundColor: whiteColor.default,
         width: 35,
         height: 35,

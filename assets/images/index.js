@@ -7,6 +7,10 @@ import MaleAvatarTwo from "./avatar_male_1.png"
 import MaleAvatarThree from "./avatar_male_2.png"
 import FemaleAvatarOne from "./avatar_female.png"
 import FemaleAvatarTwo from "./avatar_female_1.png"
+import NotificationSystemCancel from "./system_cancel.png"
+import NotificationSystemSuccess from "./system_success.png"
+import Promotion from "./promotion.png"
+import SystemNotification from "./system_notification.png"
 
 export {
   logoImage,
@@ -17,5 +21,9 @@ export {
   FemaleAvatarTwo,
   FemaleAvatarOne,
   SplashBackground,
-  MailSent
+  MailSent,
+  SystemNotification,
+  NotificationSystemCancel,
+  NotificationSystemSuccess,
+  Promotion
 };

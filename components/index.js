@@ -18,6 +18,7 @@ import Providers from "./general/Providers"
 import RoundedImage from "./general/RoundedImage"
 import ScreenContainer from "./general/ScreenContainer"
 import Map from "./navigation/Map"
+import NotificationCard from "./notification/NotificationCard"
 import TripCard from "./trips/TripCard"
 import TripFilter from "./trips/TripFilter"
 
@@ -43,5 +44,6 @@ export {
     ChatOptions,
     CameraContainer,
     NavRoute,
-    ProfileRoute
+    ProfileRoute,
+    NotificationCard
 }
