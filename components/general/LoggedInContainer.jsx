@@ -14,7 +14,7 @@ import { useActionContext } from "../../context";
 const windowWidth = Dimensions.get("window").width
 
 const LoggedInContainer = ({children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, style, containerStyle}) => {
-    const {menuOpened} = useActionContext()
+    const {menuOpened, closeMenu} = useActionContext()
     const {name: screenName} = useRoute();
     const {goBack, navigate} = useNavigation();
     const translateAnimation = useRef(new Animated.Value(0)).current;
@@ -42,7 +42,7 @@ const LoggedInContainer = ({children, header, headerText, headerTextStyle, heade
           }),
   
           Animated.timing(borderRadiusAnimation, {
-            toValue: 20,
+            toValue: 40,
             duration: animationDuration,
             useNativeDriver: true,
           })
@@ -98,7 +98,10 @@ const LoggedInContainer = ({children, header, headerText, headerTextStyle, heade
         >
 
           <TouchableOpacity onPress={()=>{
-            navigate(NavNames.Profile.name)
+            closeMenu()
+            setTimeout(()=>{
+              navigate(NavNames.Profile.name)
+            })
           }} style={{
             flexDirection: "row",
             gap: 10,

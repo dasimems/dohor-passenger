@@ -13,6 +13,7 @@ import Logo2 from "./general/Logo2"
 import Modal from "./general/Modal"
 import Nav from "./general/Nav"
 import NavRoute from "./general/NavRoute"
+import ProfileRoute from "./general/ProfileRoute"
 import Providers from "./general/Providers"
 import RoundedImage from "./general/RoundedImage"
 import ScreenContainer from "./general/ScreenContainer"
@@ -41,5 +42,6 @@ export {
     CountryList,
     ChatOptions,
     CameraContainer,
-    NavRoute
+    NavRoute,
+    ProfileRoute
 }

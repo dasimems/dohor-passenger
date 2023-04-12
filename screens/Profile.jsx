@@ -1,18 +1,20 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { Button, LoggedInContainer, Logo, Nav, RoundedImage } from "../components";
+import { Button, LoggedInContainer, Logo, Nav, ProfileRoute, RoundedImage } from "../components";
 import { blackColor, dangerColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { AngleLeft, LogOutIcon, StarIcon } from "../assets/icons";
-import { NavNames, padding } from "../data/general";
+import { NavNames, padding, profileLinks } from "../data/general";
 import { MaleAvatarOne } from "../assets/images";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { FlatList } from "react-native";
 
 const Header = () => {
     
   const { goBack } = useNavigation();
     return(
-        <View style={{
+        <SafeAreaView style={{
             flexDirection: "row",
             gap: 10,
             paddingHorizontal: padding,
@@ -37,7 +39,7 @@ const Header = () => {
                 }}
             >My Account</Text>
 
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -51,7 +53,7 @@ const Profile = () => {
         navHidden
     >
 
-        <ScrollView contentContainerStyle={{
+        <View style={{
             flex: 1
         }}>
 
@@ -104,44 +106,23 @@ const Profile = () => {
 
             <View style={{
                 marginTop: 20,
-                gap: 30,
                 flex: 1
             }}>
-                <View style={{
-                    ...styles.accountContentStyle
-                }}>
-                    <Text style={{
-                        ...styles.contentTitleStyle
-                    }}>Private Code</Text>
-                    <Text style={{
-                        ...styles.contentValueStyle
-                    }}>Wrry#5fw</Text>
-                </View>
 
-                <View style={{
-                    ...styles.accountContentStyle
-                }}>
-                    <Text style={{
-                        ...styles.contentTitleStyle
-                    }}>Email</Text>
-                    <Text style={{
-                        ...styles.contentValueStyle
-                    }}>dasimems@gmail.com</Text>
-                </View>
+                <FlatList 
+                    data={profileLinks}
+                    extraData={profileLinks}
+                    keyExtractor={((_, index)=>index)}
+                    renderItem={({item: {Icon, label, name}})=>(
 
-                 <View style={{
-                    ...styles.accountContentStyle
-                }}>
-                    <Text style={{
-                        ...styles.contentTitleStyle
-                    }}>Phone number</Text>
-                    <Text style={{
-                        ...styles.contentValueStyle
-                    }}>+(234) 903-3663-4645</Text>
-                </View>
+                        <ProfileRoute label={label} icon={<Icon color={primaryColor.default} set="bold" size={25} />} />
+
+                    )}
+                />
+                
             </View>
 
-        </ScrollView>
+        </View>
         <View style={{
             alignItems: "center",
             paddingVertical: 20

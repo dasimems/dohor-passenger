@@ -33,6 +33,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Foundation } from "@expo/vector-icons"; 
 import { FontAwesome } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { blackColor } from "../colors";
 import {
   Activity,
@@ -45,6 +46,7 @@ import {
   User as UserIconly,
   Send as SendIconly,
   Logout as LogoutIconly,
+  Lock,
   TimeCircle,
   Document,
   Camera,
@@ -219,7 +221,9 @@ export const CarIcon = ({size, color}) => {
     return <FontAwesome5 name="car" size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
-
+export const CustomerSupport = ({size, color}) => {
+    return <MaterialCommunityIcons name="face-agent" size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
 
 export const TargetIcon = ({size, color}) => {
     return <Foundation name="target-two" size={size ? size : 20} color={color ? color : blackColor.default} />;
@@ -263,6 +267,10 @@ export const Wallet2 = ({size, set, color}) => {
 
 export const HistoryIcon = ({size, set, color}) => {
     return <TimeCircle set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+export const SecurityIcon = ({size, set, color}) => {
+    return <Lock set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
 
 
