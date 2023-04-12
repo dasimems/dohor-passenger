@@ -26,7 +26,13 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FF9800"
       },
-      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -39,6 +45,11 @@
           "microphonePermission": "Allow $(Dohor) to access your microphone."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "07e4c644-0697-4325-ae3c-76b76c35ac36"
+      }
+    }
   }
 }
