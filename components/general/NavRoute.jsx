@@ -3,12 +3,19 @@ import React from 'react'
 import { lato } from '../../fonts'
 import { whiteColor } from '../../assets/colors'
 import { useNavigation } from '@react-navigation/native'
+import { useActionContext } from '../../context'
 
 const NavRoute = ({icon,label, name}) => {
     const {navigate} = useNavigation();
+    const {closeMenu} = useActionContext();
   return (
     <TouchableOpacity onPress={()=>{
-        navigate(name);
+
+        closeMenu();
+        setTimeout(()=>{
+            navigate(name);
+
+        })
 
     }} style={{
         flexDirection: "row",
