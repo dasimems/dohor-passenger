@@ -11,6 +11,8 @@ import NotificationSystemCancel from "./system_cancel.png"
 import NotificationSystemSuccess from "./system_success.png"
 import Promotion from "./promotion.png"
 import SystemNotification from "./system_notification.png"
+import Coin from "./coin.svg"
+import WalletBackground from "./wallet_background.png"
 
 export {
   logoImage,
@@ -25,5 +27,7 @@ export {
   SystemNotification,
   NotificationSystemCancel,
   NotificationSystemSuccess,
-  Promotion
+  Promotion,
+  Coin,
+  WalletBackground
 };

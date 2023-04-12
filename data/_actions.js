@@ -15,6 +15,8 @@ export const OPEN_CAMERA = "OPEN_CAMERA"
 export const OPEN_MENU = "OPEN_MENU"
 export const CLOSE_MENU = "CLOSE_MENU"
 export const CLOSE_CAMERA = "CLOSE_CAMERA"
+export const OPEN_TO_WORK = "OPEN_TO_WORK"
+export const CLOSED_WORK = "CLOSED_WORK"
 export const SET_IMAGE_SELECTED = "SET_IMAGE_SELECTED"
 
 

@@ -18,6 +18,7 @@ import Providers from "./general/Providers"
 import RoundedImage from "./general/RoundedImage"
 import ScreenContainer from "./general/ScreenContainer"
 import Map from "./navigation/Map"
+import OnlineRequest from "./navigation/OnlineRequest"
 import NotificationCard from "./notification/NotificationCard"
 import TripCard from "./trips/TripCard"
 import TripFilter from "./trips/TripFilter"
@@ -45,5 +46,6 @@ export {
     CameraContainer,
     NavRoute,
     ProfileRoute,
-    NotificationCard
+    NotificationCard,
+    OnlineRequest
 }

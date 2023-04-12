@@ -1,15 +1,17 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { Button, LoggedInContainer, Logo, Map, Nav, RoundedImage } from "../components";
+import React, { useCallback } from "react";
+import { Button, LoggedInContainer, Logo, Map, Nav, OnlineRequest, RoundedImage } from "../components";
 import { blackColor, dangerColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { NavNames, padding } from "../data/general";
+import LottieView from "lottie-react-native";
 import { TouchableOpacity } from "react-native";
 import { MaleAvatarOne } from "../assets/images";
 import { CarIcon, NotificationIcon, Search, SendIcon2, TargetIcon } from "../assets/icons";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useActionContext } from "../context";
+import { useActionContext, useUserContext } from "../context";
+import { LoadingBars } from "../assets/lotties";
 
 const Header = ()=> {
   const {navigate} = useNavigation();
@@ -113,6 +115,27 @@ const Header = ()=> {
 
 const Navigation = () => {
   const { navigate } = useNavigation(); 
+  const {online} = useUserContext();
+  const { openModal } = useActionContext();
+
+  const changeOnlineVisibility = useCallback((type) => {
+
+    if(type){
+
+      openModal({
+        content: <OnlineRequest type={type} />,
+        height: "100%",
+        styles: {
+          backgroundColor: "transparent",
+          alignItems: "center",
+          justifyContent: "center"
+
+        }
+      });
+
+    }
+
+  }, [])
   return (
     <LoggedInContainer
       header={<Header />}
@@ -132,8 +155,7 @@ const Navigation = () => {
           position: "absolute",
           bottom: 0,
           width: "100%",
-          padding: 15,
-          paddingBottom: 25
+          padding: 0,
         }}>
 
           <View style={{
@@ -154,15 +176,81 @@ const Navigation = () => {
             </TouchableOpacity>
 
           </View>
+          
 
-          <Button style={{
-            backgroundColor: primaryColor.default
-          }}>
-            <Text style={{
-              fontFamily: lato.bold.default,
-              color: whiteColor.default
-            }}>Start</Text>
-          </Button>
+          {online?
+          
+            <View>
+
+              <View style={{
+                padding,
+                paddingBottom: 0
+              }}>
+
+                <Button onPress={()=>{
+                  changeOnlineVisibility("stop");
+                }} style={{
+                  backgroundColor: dangerColor.default
+                }}>
+                  <Text style={{
+                    color: whiteColor.default,
+                    fontFamily: lato.bold.default
+                  }}>Stop</Text>
+                </Button>
+              </View>
+
+
+              <View style={{
+                backgroundColor: "#0074FF",
+                padding: 15,
+                marginTop: 30,
+                borderTopRightRadius: 20,
+                borderTopLeftRadius: 20,
+                alignItems: "center",
+                paddingBottom: 30
+                
+              }}>
+
+                <Text style={{
+                  color: whiteColor.default,
+                  fontFamily: lato.bold.default
+                }}>Scanning...</Text>
+
+                <LottieView
+                  style={{
+                    width: 100,
+                    height: 30
+                  }}
+                  source={LoadingBars}
+                  loop
+                  autoPlay
+
+                />
+
+
+              </View>
+
+            </View>
+
+          : <View style={{
+              padding,
+              paddingBottom: 25
+
+
+            }}>
+            
+              <Button onPress={()=>{
+                changeOnlineVisibility("start");
+              }} style={{
+              backgroundColor: primaryColor.default
+            }}>
+              <Text style={{
+                fontFamily: lato.bold.default,
+                color: whiteColor.default
+              }}>Start</Text>
+            </Button>
+            </View>
+          }
         
 
         </View>

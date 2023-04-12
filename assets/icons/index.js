@@ -291,4 +291,8 @@ export const MoneyIcon = ({size,  color}) => {
     return <MoneySvg width={size ? size : 20} height={size ? size : 20} />;
 }
 
+export const CheckCircleIcon = ({size,  color}) => {
+    return <FontAwesome name="check-circle" size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
 
