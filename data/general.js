@@ -1,4 +1,4 @@
-import { ChatIcon, Menu, NavigationIcon, TripsIcon, UserIcon } from "../assets/icons";
+import { CarIcon, ChatIcon, HistoryIcon, HomeIcon, Menu, NavigationIcon, Pending, TripsIcon, UserIcon, Wallet, Wallet2 } from "../assets/icons";
 import CountryListJson from "./all_country.json"
 
 export const NavNames = {
@@ -30,21 +30,35 @@ export const NavNames = {
   },
   Navigation: {
     name: "Navigation",
-    label: "Navigation",
+    label: "Home",
     navShown: true,
-    Icon: NavigationIcon
+    Icon: HomeIcon
+  },
+
+  Wallet: {
+    name: "Wallet",
+    label: "Wallet",
+    navShown: true,
+    Icon: Wallet2
+  },
+
+  History: {
+    name: "History",
+    label: "History",
+    navShown: true,
+    Icon: HistoryIcon
   },
 
   Trips: {
     name: "Trips",
-    label: "Trips",
+    label: "Rides",
     navShown: true,
-    Icon: TripsIcon
+    Icon: CarIcon
   },
 
   Chat: {
     name: "Chat",
-    label: "Chat",
+    label: "Messages",
     navShown: true,
     Icon: ChatIcon
   },
@@ -58,8 +72,8 @@ export const NavNames = {
 
   Profile: {
     name: "Profile",
-    label: "Profile",
-    navShown: false,
+    label: "Account",
+    navShown: true,
     Icon: UserIcon
   }
 };

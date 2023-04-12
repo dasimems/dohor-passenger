@@ -1,12 +1,13 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useCallback } from "react";
-import { Button, CountryList, CountrySelectDetails, FormInputField, Logo2 } from "../components";
+import { Button, CountryList, CountrySelectDetails, FormInputField, Logo } from "../components";
 import { blackColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import allStyles from "../assets/stylesheet";
 import { useActionContext, useFormContext } from "../context";
 import { NavNames } from "../data/general";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Login = () => {
     const {navigate} = useNavigation();
@@ -19,7 +20,7 @@ const Login = () => {
     }, [])
 
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         alignItems: "center",
@@ -40,7 +41,7 @@ const Login = () => {
           }}
         >
 
-            <Logo2 />
+            <Logo image imageSize={70} />
 
             <View>
                 <Text style={{
@@ -56,7 +57,7 @@ const Login = () => {
                     color: blackColor.opacity700
                 }}>Welcome back to <Text style={{
                     fontFamily: lato.bold.default
-                }}>PAXI</Text>, enter your details below to continue.</Text>
+                }}>DOHOR</Text>, enter your details below to continue.</Text>
             </View>
 
             <View style={{
@@ -117,7 +118,7 @@ const Login = () => {
 
         </TouchableOpacity>
       </View> */}
-    </View>
+    </SafeAreaView>
   );
 };
 

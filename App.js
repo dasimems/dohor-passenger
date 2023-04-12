@@ -40,8 +40,8 @@ export default function App() {
 
                 }}>
 
-                <Stack.Screen name={NavNames.GettingStarted.name} component={GettingStarted} />
                 <Stack.Screen name={NavNames.Navigation.name} component={Navigation} />
+                <Stack.Screen name={NavNames.GettingStarted.name} component={GettingStarted} />
                 <Stack.Screen name={NavNames.Login.name} component={Login} />
                 <Stack.Screen name={NavNames.OTP.name} component={OTP} />
                 <Stack.Screen name={NavNames.Trips.name} component={Trips} />

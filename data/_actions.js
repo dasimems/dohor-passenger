@@ -12,6 +12,8 @@ export const OPEN_MODAL ="OPEN_MODAL"
 export const CLOSE_MODAL ="CLOSE_MODAL"
 export const SET_MODAL_STYLES ="SET_MODAL_STYLES"
 export const OPEN_CAMERA = "OPEN_CAMERA"
+export const OPEN_MENU = "OPEN_MENU"
+export const CLOSE_MENU = "CLOSE_MENU"
 export const CLOSE_CAMERA = "CLOSE_CAMERA"
 export const SET_IMAGE_SELECTED = "SET_IMAGE_SELECTED"
 

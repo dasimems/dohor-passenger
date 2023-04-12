@@ -1,76 +1,245 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
-import Nav from "./Nav";
-import { whiteColor } from "../../assets/colors";
-import { padding } from "../../data/general";
-import { AngleLeft } from "../../assets/icons";
+import { StyleSheet, Text, TouchableOpacity, View, Dimensions, FlatList, Animated } from "react-native";
+import React, { useEffect, useRef } from "react";
+import { primaryColor, whiteColor } from "../../assets/colors";
+import { NavNames, padding, screenNav } from "../../data/general";
+import { AngleLeft, AngleRight } from "../../assets/icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { lato } from "../../fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
+import RoundedImage from "./RoundedImage";
+import { MaleAvatarOne } from "../../assets/images";
+import NavRoute from "./NavRoute";
+import { useActionContext } from "../../context";
+
+const windowWidth = Dimensions.get("window").width
 
 const LoggedInContainer = ({children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, style, containerStyle}) => {
-
+    const {menuOpened} = useActionContext()
     const {name: screenName} = useRoute();
-    const {goBack} = useNavigation();
+    const {goBack, navigate} = useNavigation();
+    const translateAnimation = useRef(new Animated.Value(0)).current;
+    const scaleAnimation = useRef(new Animated.Value(1)).current;
+    const borderRadiusAnimation = useRef(new Animated.Value(0)).current;
+    // (windowWidth * 0.95)
+    const animationDuration = 300;
+
+    useEffect(()=>{
+
+      if(menuOpened){
+
+        Animated.parallel([
+  
+          Animated.timing(translateAnimation, {
+            toValue: (windowWidth * 0.95),
+            duration: animationDuration,
+            useNativeDriver: true,
+          }),
+  
+          Animated.timing(scaleAnimation, {
+            toValue: 0.8,
+            duration: animationDuration,
+            useNativeDriver: true,
+          }),
+  
+          Animated.timing(borderRadiusAnimation, {
+            toValue: 20,
+            duration: animationDuration,
+            useNativeDriver: true,
+          })
+        ]).start()
+          
+      }else{
+
+        Animated.parallel([
+  
+          Animated.timing(translateAnimation, {
+            toValue: 0,
+            duration: animationDuration,
+            useNativeDriver: true,
+          }),
+  
+          Animated.timing(scaleAnimation, {
+            toValue: 1,
+            duration: animationDuration,
+            useNativeDriver: true,
+          }),
+  
+          Animated.timing(borderRadiusAnimation, {
+            toValue: 0,
+            duration: animationDuration,
+            useNativeDriver: true,
+          })
+        ]).start()
+
+      }
+
+
+
+
+      
+    },[menuOpened])
+
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: whiteColor.default,
-        ...style
-      }}
-    >
 
-    <View>
+    <>
 
-        {header? header : <>
+      <View style={{
         
+          ...StyleSheet.absoluteFillObject,
+          backgroundColor: primaryColor.default
+
+      }}>
+
+        <SafeAreaView
+          style={{
+            flex: 1,
+            paddingHorizontal: padding
+          }}
+        >
+
+          <TouchableOpacity onPress={()=>{
+            navigate(NavNames.Profile.name)
+          }} style={{
+            flexDirection: "row",
+            gap: 10,
+            alignItems: "center",
+            marginTop: 25
+          }}>
+            <RoundedImage size={70} image={MaleAvatarOne} />
+
             <View style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                paddingVertical: 10,
-                paddingHorizontal: padding,
-                ...headerStyle
+              gap: 4,
+              alignItems: "flex-start"
             }}>
 
-                <View style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: 5
-                    
-                }}>
+              <Text style={{
+                color: whiteColor.default,
+                fontFamily: lato.bold.default,
+                fontSize: 17
+              }}>John Doe</Text>
 
-                    {showBackFunction && <TouchableOpacity onPress={goBack}>
+              <Text style={{
+                color: whiteColor.opacity600,
+                fontFamily: lato.regular.default,
+                fontSize: 12
+              }}>+ (234) 903-3663-4645</Text>
 
-                        <AngleLeft size={20} />
+              <View style={{
+                flexDirection: "row",
+                backgroundColor: whiteColor.default,
+                paddingHorizontal: 10,
+                paddingVertical: 5,
+                borderRadius: 100,
+                width: "auto",
+                gap: 10,
+                alignItems: "center"
+              }}>
+                <Text style={{
+                  fontFamily: lato.bold.default,
+                  fontSize: 12,
+                }}>Credit</Text>
+                <Text style={{
+                  fontFamily: lato.bold.default,
+                  fontSize: 12,
+                  color: "#0074FF"
+                }}>2500</Text>
 
-                    </TouchableOpacity>}
-
-                    <Text style={{
-                        fontFamily: lato.black.default,
-                        fontSize: 20,
-                        ...headerTextStyle
-                    }}>{headerText? headerText : screenName}</Text>
-                </View>
-
-
+                <AngleRight size={14} />
+              </View>
 
             </View>
-        
-        </>}
+          </TouchableOpacity>
 
-    </View>
-      <View
+          <View style={{
+            flex: 1,
+            paddingVertical: 25,
+            marginTop: 15
+          }}>
+
+            <FlatList
+              contentContainerStyle={{
+                gap: 30
+              }}
+              showsVerticalScrollIndicator={false}
+              data={screenNav}
+              extraData={screenNav}
+              keyExtractor={(_,index)=>index}
+              renderItem={({item: {Icon, label, name}})=>(
+                <NavRoute icon={<Icon set="bold" color={whiteColor.default} size={30} />} label={label} name={name} />
+              )}
+           
+           
+          />
+
+          </View>
+
+
+
+        </SafeAreaView>
+
+
+      </View>
+    
+      <Animated.View
         style={{
           flex: 1,
-          paddingHorizontal: padding,
-          ...containerStyle
+          backgroundColor: whiteColor.default,
+          overflow: "hidden",
+          ...StyleSheet.absoluteFillObject,
+          zIndex:999,
+          elevation: 999,
+          transform: [{scale: scaleAnimation}, {translateX: translateAnimation}],
+          borderRadius: borderRadiusAnimation,
+          ...style
         }}
       >
-        {children}
-      </View>
+          {header? header : <>
+          
+              <View style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  paddingVertical: 10,
+                  paddingHorizontal: padding,
+                  ...headerStyle
+              }}>
 
-      {!navHidden && <Nav />}
-    </View>
+                  <View style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: 5
+                      
+                  }}>
+
+                      {showBackFunction && <TouchableOpacity onPress={goBack}>
+
+                          <AngleLeft size={20} />
+
+                      </TouchableOpacity>}
+
+                      <Text style={{
+                          fontFamily: lato.black.default,
+                          fontSize: 20,
+                          ...headerTextStyle
+                      }}>{headerText? headerText : screenName}</Text>
+                  </View>
+
+
+
+              </View>
+          
+          </>}
+        <View
+          style={{
+            flex: 1,
+            paddingHorizontal: padding,
+            ...containerStyle
+          }}
+        >
+          {children}
+        </View>
+      </Animated.View>
+    
+    </>
   );
 };
 

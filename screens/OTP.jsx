@@ -12,7 +12,6 @@ import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { AngleLeft } from "../assets/icons";
 import AnimatedLottieView from "lottie-react-native";
-import { mailLottieFile } from "../assets/lotties";
 import { useFormContext } from "../context";
 import {
   OTP_CODE_FOUR,
@@ -22,6 +21,8 @@ import {
 } from "../data/_actions";
 import { formatSeconds } from "../functions";
 import { NavNames } from "../data/general";
+import { MailSent } from "../assets/images";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const OTP = () => {
   const { navigate, goBack } = useNavigation();
@@ -91,7 +92,7 @@ const OTP = () => {
   }, [otpCodeOne, otpCodeTwo, otpCodeThree, otpCodeFour, processOtp]);
 
   return (
-    <View style={{ flex: 1, padding: 20, backgroundColor: whiteColor.default }}>
+    <SafeAreaView style={{ flex: 1, padding: 20, backgroundColor: whiteColor.default }}>
       <View style={{ flex: 1 }}>
         <TouchableOpacity
           onPress={() => {
@@ -108,12 +109,14 @@ const OTP = () => {
             gap: 30
           }}
         >
-          <AnimatedLottieView
+          {/* <AnimatedLottieView
             source={mailLottieFile}
             autoPlay
             loop={false}
             style={{ maxWidth: 100, width: "100%", maxHeight: 100 }}
-          />
+          /> */}
+
+          <MailSent width={100} height={100} />
 
           <View style={{ gap: 6 }}>
             <Text
@@ -328,7 +331,7 @@ const OTP = () => {
               Resend Code in ({formatSeconds(defaultTimer)})
             </Text>}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

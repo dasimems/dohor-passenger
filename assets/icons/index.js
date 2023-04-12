@@ -26,24 +26,30 @@ import {
   StopCircle,
   Compass,
   ChevronDown,
-  RefreshCcw
+  RefreshCcw,
+  ChevronRight
 } from "lucide-react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Foundation } from "@expo/vector-icons"; 
 import { FontAwesome } from "@expo/vector-icons";
 import { blackColor } from "../colors";
 import {
   Activity,
+  Wallet as WalletIconly,
   Chat,
   CloseSquare,
+  Home as HomeIconly,
   Plus,
   Star,
   User as UserIconly,
   Send as SendIconly,
   Logout as LogoutIconly,
+  TimeCircle,
   Document,
   Camera,
-  Image2
+  Image2,
+  Notification
 } from "react-native-iconly";
 import { X } from "lucide-react-native";
 
@@ -61,6 +67,10 @@ export const ArrowLeft = ({size, color}) => {
 
 export const AngleLeft = ({size, color}) => {
     return <ChevronLeft size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+export const AngleRight = ({size, color}) => {
+    return <ChevronRight size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
 export const AngleDown = ({size, color}) => {
@@ -209,6 +219,12 @@ export const CarIcon = ({size, color}) => {
     return <FontAwesome5 name="car" size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
+
+
+export const TargetIcon = ({size, color}) => {
+    return <Foundation name="target-two" size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
 export const LogOutIcon = ({size, set, color}) => {
     return <LogoutIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
@@ -231,7 +247,26 @@ export const ImageIcon = ({size, set, color}) => {
     return <Image2 set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
 
+export const NotificationIcon = ({size, set, color}) => {
+    return <Notification set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+export const HomeIcon = ({size, set, color}) => {
+    return <HomeIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+
+export const Wallet2 = ({size, set, color}) => {
+    return <WalletIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
+
+export const HistoryIcon = ({size, set, color}) => {
+    return <TimeCircle set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
+}
+
 
 export const ChangeCameraIcon = ({size,  color}) => {
     return <RefreshCcw size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
+
