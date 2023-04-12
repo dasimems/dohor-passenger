@@ -6,7 +6,7 @@ import { whiteColor } from '../../assets/colors';
 
 const ScreenContainer = ({children}) => {
   return <View style={{ flex: 1 }}>
-      <StatusBar style="auto" backgroundColor='transparent' translucent />
+      <StatusBar backgroundColor='transparent' translucent />
 
         
 
