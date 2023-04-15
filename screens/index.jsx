@@ -5,6 +5,7 @@ import Login from "./Login"
 import Navigation from "./Navigation"
 import Notifications from "./Notifications"
 import OTP from "./OTP"
+import PasswordChange from "./PasswordChange"
 import Profile from "./Profile"
 import ProfileDetails from "./ProfileDetails"
 import Trips from "./Trips"
@@ -21,5 +22,6 @@ export {
     ChatDetails,
     Notifications,
     Wallet,
-    ProfileDetails
+    ProfileDetails,
+    PasswordChange
 }
