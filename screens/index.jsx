@@ -9,6 +9,7 @@ import PasswordChange from "./PasswordChange"
 import Profile from "./Profile"
 import ProfileDetails from "./ProfileDetails"
 import Trips from "./Trips"
+import VehicleDetails from "./VehicleDetails"
 import Wallet from "./Wallet"
 
 export {
@@ -23,5 +24,6 @@ export {
     Notifications,
     Wallet,
     ProfileDetails,
-    PasswordChange
+    PasswordChange,
+    VehicleDetails
 }

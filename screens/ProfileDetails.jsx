@@ -22,7 +22,7 @@ const ProfileDetails = () => {
   return (
     <LoggedInContainer
         navHidden
-        header={<ProfileHeader />}
+        header={<ProfileHeader text="Profile Details" />}
     >
 
         <View style={{

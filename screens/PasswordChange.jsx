@@ -26,7 +26,7 @@ const PasswordChange = () => {
   const [isFocus, setIsFocus] = useState(false);
 
   return (
-    <LoggedInContainer navHidden header={<ProfileHeader />}>
+    <LoggedInContainer navHidden header={<ProfileHeader text="Change Password" />}>
       <View
         style={{
           gap: 20,

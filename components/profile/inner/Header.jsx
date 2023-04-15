@@ -8,7 +8,7 @@ import Button from '../../general/Button'
 import { blackColor, primaryColor } from '../../../assets/colors'
 import { useNavigation } from '@react-navigation/native'
 
-const ProfileHeader = ({text, processing, action,}) => {
+const ProfileHeader = ({text, processing, action, actionButtonHidden, textHidden}) => {
     const {goBack} = useNavigation()
   return (
     <SafeAreaView style={{
@@ -31,14 +31,14 @@ const ProfileHeader = ({text, processing, action,}) => {
 
         </TouchableOpacity>
 
-        <Text style={{
+        {!textHidden && <Text style={{
             fontFamily: lato.bold.default,
             fontSize: 18
-        }}>{text? text : "Profile"}</Text>
+        }}>{text? text : "Profile"}</Text>}
 
       </View>
 
-      <Button loading={processing} loaderSize={20} loadingStyle={{
+      {!actionButtonHidden && <Button onPress={action} loading={processing} loaderSize={20} loadingStyle={{
         backgroundColor: primaryColor.opacity400,
         width: "auto",
         paddingVertical: 5,
@@ -57,7 +57,7 @@ const ProfileHeader = ({text, processing, action,}) => {
 
         }}>{processing? "Saving" : "Save"}</Text>
 
-      </Button>
+      </Button>}
     </SafeAreaView>
   )
 }
