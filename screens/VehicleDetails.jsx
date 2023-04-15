@@ -5,14 +5,12 @@ import {
   FormInputField,
   LoggedInContainer,
   Logo,
-  Nav,
   ProfileHeader
 } from "../components";
-import { blackColor, primaryColor, whiteColor } from "../assets/colors";
+import { blackColor, primaryColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { Dropdown } from "react-native-element-dropdown";
-import { AngleDown } from "../assets/icons";
 
 const data = [
   { label: "None", value: "" },

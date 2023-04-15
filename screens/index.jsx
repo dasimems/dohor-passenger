@@ -1,5 +1,6 @@
 import ChatDetails from "./ChatDetails"
 import Chats from "./Chats"
+import CreditDetails from "./CreditDetails"
 import GettingStarted from "./GettingStarted"
 import Login from "./Login"
 import Navigation from "./Navigation"
@@ -25,5 +26,6 @@ export {
     Wallet,
     ProfileDetails,
     PasswordChange,
-    VehicleDetails
+    VehicleDetails,
+    CreditDetails
 }

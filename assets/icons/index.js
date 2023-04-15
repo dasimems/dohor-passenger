@@ -27,7 +27,9 @@ import {
   Compass,
   ChevronDown,
   RefreshCcw,
-  ChevronRight
+  ChevronRight,
+  MinusCircle,
+  ArrowLeftRight
 } from "lucide-react-native";
 import MoneySvg from "./money.svg"
 import { MaterialIcons } from "@expo/vector-icons";
@@ -257,6 +259,10 @@ export const NotificationIcon = ({size, set, color}) => {
     return <Notification set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
 
+export const SubtractIconCircle= ({size, color}) => {
+    return <MinusCircle size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
 export const HomeIcon = ({size, set, color}) => {
     return <HomeIconly set={set ? set : "light"} size={size ? size : 20} primaryColor={color ? color : blackColor.default} />;
 }
@@ -281,6 +287,10 @@ export const LocationIcon = ({size, set, color}) => {
 
 export const ChangeCameraIcon = ({size,  color}) => {
     return <RefreshCcw size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+export const ConvertIcon = ({size,  color}) => {
+    return <ArrowLeftRight size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
 export const DotIcon = ({size,  color}) => {

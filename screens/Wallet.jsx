@@ -1,17 +1,17 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Button, LoggedInContainer, Logo, Nav } from "../components";
-import { blackColor, primaryColor, whiteColor } from "../assets/colors";
+import { blackColor, grayColor, infoColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { padding } from "../data/general";
+import { NavNames, padding } from "../data/general";
 import { TouchableOpacity } from "react-native";
-import { AngleLeft, AngleRight } from "../assets/icons";
+import { AddCircle, AngleLeft, AngleRight, SubtractIconCircle } from "../assets/icons";
 import { Coin, WalletBackground } from "../assets/images";
 
 const Header = () => {
-    const {goBack} = useNavigation();
+    const {goBack, navigate} = useNavigation();
     return(
 
         <>
@@ -47,7 +47,9 @@ const Header = () => {
                     </View>
                         
 
-                    <View style={{
+                    <TouchableOpacity onPress={()=>{
+                        navigate(NavNames.CreditDetails.name)
+                    }} style={{
                         backgroundColor: blackColor.opacity100,
                         borderRadius: 90,
                         alignItems: "center",
@@ -64,7 +66,7 @@ const Header = () => {
                             fontFamily: lato.bold.default,
                             fontSize: 12,
                         }}>2500</Text>
-                    </View>
+                    </TouchableOpacity>
 
                 </SafeAreaView>
         
@@ -90,8 +92,10 @@ const Wallet = () => {
                 borderRadius: 20,
                 marginTop: 20,
                 padding: 35,
-                gap: 8,
+                // gap: 8,
                 backgroundColor: "#E42C66",
+                justifyContent: "space-between"
+
             }}>
 
             <View style={{
@@ -113,7 +117,10 @@ const Wallet = () => {
                     backgroundColor: blackColor.opacity100,
                     borderRadius: 1000
             }} />
-                
+
+            <View style={{
+                gap: 8
+            }}>
 
                 <Text style={{
                     color: whiteColor.opacity700,
@@ -131,6 +138,52 @@ const Wallet = () => {
                 }}>
                     $4,570,800
                 </Text>
+
+            </View>
+
+
+            <View style={{
+                flexDirection: "row",
+                gap: 14
+            }}>
+                <TouchableOpacity style={{
+                    backgroundColor: grayColor.opacity700,
+                    paddingVertical: 6,
+                    paddingHorizontal: 15,
+                    borderRadius: 10,
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 4
+
+                }}>
+                    <Text style={{
+                        fontFamily: lato.regular.default
+                    }}>Deposit</Text>
+
+                    <AddCircle size={17} color={blackColor.opacity700} />
+                </TouchableOpacity>
+
+                <TouchableOpacity style={{
+                    backgroundColor: grayColor.opacity700,
+                    paddingVertical: 6,
+                    paddingHorizontal: 15,
+                    borderRadius: 10,
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 4
+
+                }}>
+                    <Text style={{
+                        fontFamily: lato.regular.default
+                    }}>Withdraw</Text>
+
+                    <SubtractIconCircle size={17} color={blackColor.opacity700} />
+                </TouchableOpacity>
+            </View>
+                
+
+            <View></View>
+
 
             </View>
 

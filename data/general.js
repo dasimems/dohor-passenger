@@ -1,4 +1,5 @@
 import { CarIcon, ChatIcon, CustomerSupport, HistoryIcon, HomeIcon, Menu, NotificationIcon, SecurityIcon, UserIcon, Wallet2 } from "../assets/icons";
+import { Coin } from "../assets/images";
 import CountryListJson from "./all_country.json"
 
 export const NavNames = {
@@ -120,13 +121,20 @@ export const NavNames = {
     Icon: CarIcon
   },
 
-  CustomerSupport: {
-    name: "CustomerSupport",
-    label: "Customer Support",
+  CreditDetails: {
+    name: "CreditDetails",
+    label: "Credit Details",
     navShown: false,
-    profileLink: true,
-    Icon: CustomerSupport
-  }
+    profileLink: false,
+    Icon: Coin
+  },
+  // CustomerSupport: {
+  //   name: "CustomerSupport",
+  //   label: "Customer Support",
+  //   navShown: false,
+  //   profileLink: true,
+  //   Icon: CustomerSupport
+  // }
 };
 
 export const countryData = CountryListJson.map(country => ({name: country.name.common, mobileCode: country.idd.root, countryCode: country.cca2, flag: country.flags.png}));

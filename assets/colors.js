@@ -92,6 +92,19 @@ export const infoColor = {
     opacity900: "rgba(6, 182, 212, .9)",
 }
 
+export const grayColor = {
+    default: "rgb(190, 190, 190)",
+    opacity100: "rgba(190, 190, 190, .1)",
+    opacity200: "rgba(190, 190, 190, .2)",
+    opacity300: "rgba(190, 190, 190, .3)",
+    opacity400: "rgba(190, 190, 190, .4)",
+    opacity500: "rgba(190, 190, 190, .5)",
+    opacity600: "rgba(190, 190, 190, .6)",
+    opacity700: "rgba(190, 190, 190, .7)",
+    opacity800: "rgba(190, 190, 190, .8)",
+    opacity900: "rgba(190, 190, 190, .9)",
+}
+
 export const warningColor = {
     default: "rgb(250, 204, 21)",
     opacity100: "rgba(250, 204, 21, .1)",

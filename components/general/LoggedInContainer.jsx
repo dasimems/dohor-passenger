@@ -13,7 +13,7 @@ import { useActionContext } from "../../context";
 
 const windowWidth = Dimensions.get("window").width
 
-const LoggedInContainer = ({children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, style, containerStyle}) => {
+const LoggedInContainer = ({children, header, headerText, spacing, headerTextStyle, headerStyle, showBackFunction, navHidden, style, containerStyle}) => {
     const {menuOpened, closeMenu} = useActionContext()
     const {name: screenName} = useRoute();
     const {goBack, navigate} = useNavigation();
@@ -97,21 +97,24 @@ const LoggedInContainer = ({children, header, headerText, headerTextStyle, heade
           }}
         >
 
-          <TouchableOpacity onPress={()=>{
-            closeMenu()
-            setTimeout(()=>{
-              navigate(NavNames.Profile.name)
-            })
-          }} style={{
+          <View style={{
             flexDirection: "row",
             gap: 10,
             alignItems: "center",
             marginTop: 25
           }}>
-            <RoundedImage size={70} image={MaleAvatarOne} />
+            <TouchableOpacity onPress={()=>{
+              closeMenu()
+              setTimeout(()=>{
+                navigate(NavNames.Profile.name)
+              })
+            }}>
+              <RoundedImage size={70} image={MaleAvatarOne} />
+              
+            </TouchableOpacity>
 
             <View style={{
-              gap: 4,
+              gap: 6,
               alignItems: "flex-start"
             }}>
 
@@ -127,7 +130,12 @@ const LoggedInContainer = ({children, header, headerText, headerTextStyle, heade
                 fontSize: 12
               }}>+ (234) 903-3663-4645</Text>
 
-              <View style={{
+              <TouchableOpacity onPress={()=>{
+                closeMenu()
+                setTimeout(()=>{
+                  navigate(NavNames.CreditDetails.name)
+                })
+              }} style={{
                 flexDirection: "row",
                 backgroundColor: whiteColor.default,
                 paddingHorizontal: 10,
@@ -148,10 +156,10 @@ const LoggedInContainer = ({children, header, headerText, headerTextStyle, heade
                 }}>2500</Text>
 
                 <AngleRight size={14} />
-              </View>
+              </TouchableOpacity>
 
             </View>
-          </TouchableOpacity>
+          </View>
 
           <View style={{
             flex: 1,
@@ -210,7 +218,7 @@ const LoggedInContainer = ({children, header, headerText, headerTextStyle, heade
                   <View style={{
                       flexDirection: "row",
                       alignItems: "center",
-                      gap: 5
+                      gap: spacing? spacing : 5,
                       
                   }}>
 
