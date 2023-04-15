@@ -20,6 +20,7 @@ import ScreenContainer from "./general/ScreenContainer"
 import Map from "./navigation/Map"
 import OnlineRequest from "./navigation/OnlineRequest"
 import NotificationCard from "./notification/NotificationCard"
+import ProfileHeader from "./profile/inner/Header"
 import TripCard from "./trips/TripCard"
 import TripFilter from "./trips/TripFilter"
 
@@ -47,5 +48,7 @@ export {
     NavRoute,
     ProfileRoute,
     NotificationCard,
-    OnlineRequest
+    OnlineRequest,
+    ProfileHeader
+    
 }

@@ -115,7 +115,7 @@ const Profile = () => {
                     keyExtractor={((_, index)=>index)}
                     renderItem={({item: {Icon, label, name}})=>(
 
-                        <ProfileRoute label={label} icon={<Icon color={primaryColor.default} set="bold" size={25} />} />
+                        <ProfileRoute label={label} name={name} icon={<Icon color={primaryColor.default} set="bold" size={25} />} />
 
                     )}
                 />

@@ -18,7 +18,7 @@ export const reducer= (state, action) =>{
         return { ...state, modalOpened: true, modalContent: payload, modalHeight: "50%" };
 
       case CLOSE_MODAL:
-        return { ...state, modalOpened: false, modalContent: null, modalHeight: "50%" };
+        return { ...state, modalOpened: false, modalContent: null, modalHeight: "50%", modalStyle: null };
 
       case SET_MODAL_STYLES:
         return { ...state, modalStyle: payload };
