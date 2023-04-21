@@ -4,6 +4,7 @@ import CreditDetails from "./CreditDetails"
 import GettingStarted from "./GettingStarted"
 import Login from "./Login"
 import Navigation from "./Navigation"
+import NewBank from "./NewBank"
 import Notifications from "./Notifications"
 import OTP from "./OTP"
 import PasswordChange from "./PasswordChange"
@@ -29,5 +30,6 @@ export {
     PasswordChange,
     VehicleDetails,
     CreditDetails,
-    Withdraw
+    Withdraw,
+    NewBank
 }

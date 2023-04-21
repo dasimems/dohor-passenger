@@ -152,7 +152,7 @@ const Withdraw = () => {
 
 
 
-                <ScrollView contentContainerStyle={{
+                <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{
                     gap: 25
                 }}>
                     <View style={{
@@ -166,7 +166,9 @@ const Withdraw = () => {
                             color: blackColor.opacity600
                         }}>Choose bank account</Text>
     
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{
+                            navigate(NavNames.NewBank.name)
+                        }}>
                             <Text style={{
                                 fontFamily: lato.regular.default,
                                 color: dangerColor.opacity500

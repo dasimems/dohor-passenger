@@ -1,4 +1,4 @@
-import { CarIcon, ChatIcon, CustomerSupport, HistoryIcon, HomeIcon, Menu, NotificationIcon, SecurityIcon, UserIcon, Wallet2 } from "../assets/icons";
+import { Bank, CarIcon, ChatIcon, CustomerSupport, HistoryIcon, HomeIcon, Menu, NotificationIcon, SecurityIcon, UserIcon, Wallet2 } from "../assets/icons";
 import { Coin } from "../assets/images";
 import CountryListJson from "./all_country.json"
 
@@ -110,7 +110,15 @@ export const NavNames = {
     label: "Withdraw",
     navShown: false,
     profileLink: false,
-    Icon: UserIcon
+    Icon: Bank
+  },
+
+  NewBank: {
+    name: "NewBank",
+    label: "New Bank",
+    navShown: false,
+    profileLink: false,
+    Icon: Bank
   },
 
   Password: {
