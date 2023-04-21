@@ -31,7 +31,10 @@
         "READ_EXTERNAL_STORAGE",
         "WRITE_EXTERNAL_STORAGE",
         "android.permission.CAMERA",
-        "android.permission.RECORD_AUDIO"
+        "android.permission.RECORD_AUDIO",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION"
       ]
     },
     "web": {
@@ -43,6 +46,16 @@
         {
           "cameraPermission": "Allow $(Dohor) to access your camera.",
           "microphonePermission": "Allow $(Dohor) to access your microphone."
+        }
+      ],
+
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(Dohor) to use your location.",
+          "locationAlwaysPermission": "Allow $(Dohor) to use your location.",
+          "isIosBackgroundLocationEnabled": "Allow $(Dohor) to use your location.",
+          "isAndroidBackgroundLocationEnabled": "Allow $(Dohor) to use your location."
         }
       ]
     ],

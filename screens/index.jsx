@@ -12,6 +12,7 @@ import ProfileDetails from "./ProfileDetails"
 import Trips from "./Trips"
 import VehicleDetails from "./VehicleDetails"
 import Wallet from "./Wallet"
+import Withdraw from "./Withdraw"
 
 export {
     GettingStarted,
@@ -27,5 +28,6 @@ export {
     ProfileDetails,
     PasswordChange,
     VehicleDetails,
-    CreditDetails
+    CreditDetails,
+    Withdraw
 }

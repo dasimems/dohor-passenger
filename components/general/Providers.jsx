@@ -12,6 +12,7 @@ const Providers = ({ children }) => {
       <FormProvider>
         <UserProvider>
           <NavigationProvider>
+            
             {children}
           </NavigationProvider>
         </UserProvider>

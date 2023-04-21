@@ -18,6 +18,11 @@ export const CLOSE_CAMERA = "CLOSE_CAMERA"
 export const OPEN_TO_WORK = "OPEN_TO_WORK"
 export const CLOSED_WORK = "CLOSED_WORK"
 export const SET_IMAGE_SELECTED = "SET_IMAGE_SELECTED"
+export const SET_USER_SELECTED = "SET_USER_SELECTED"
+export const SET_USER_LIST = "SET_USER_LIST"
+
+export const SET_FROM = "SET_FROM"
+export const SET_TO = "SET_TO"
 
 
 export const OTP_CODE_ONE = "OTP_CODE_ONE"

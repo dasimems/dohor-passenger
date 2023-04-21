@@ -17,12 +17,21 @@ import ProfileRoute from "./general/ProfileRoute"
 import Providers from "./general/Providers"
 import RoundedImage from "./general/RoundedImage"
 import ScreenContainer from "./general/ScreenContainer"
+import Stars from "./general/Stars"
 import Map from "./navigation/Map"
 import OnlineRequest from "./navigation/OnlineRequest"
+import Passengers from "./navigation/Passengers"
+import PassengerCard from "./navigation/inner/PassengerCard"
+import PassengerDetails from "./navigation/inner/PassengerDetails"
+import PassengerList from "./navigation/inner/PassengerList"
+import SearchingPassenger from "./navigation/inner/SearchingPassenger"
 import NotificationCard from "./notification/NotificationCard"
 import ProfileHeader from "./profile/inner/Header"
 import TripCard from "./trips/TripCard"
 import TripFilter from "./trips/TripFilter"
+import BankList from "./wallet/BankList"
+import TransactionCard from "./wallet/TransactionCard"
+import BankCard from "./wallet/inner/BankCard"
 
 export {
     Providers,
@@ -49,6 +58,15 @@ export {
     ProfileRoute,
     NotificationCard,
     OnlineRequest,
-    ProfileHeader
-    
+    ProfileHeader,
+    PassengerList,
+    Passengers,
+    PassengerDetails,
+    PassengerCard,
+    Stars,
+    SearchingPassenger,
+    TransactionCard,
+    BankCard,
+    BankList
+
 }

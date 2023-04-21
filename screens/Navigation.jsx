@@ -1,17 +1,15 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import React, { useCallback } from "react";
-import { Button, LoggedInContainer, Logo, Map, Nav, OnlineRequest, RoundedImage } from "../components";
+import { StyleSheet, Text, View } from "react-native";
+import React, { useCallback, useEffect, useState } from "react";
+import { Button, LoggedInContainer, Map, OnlineRequest, Passengers, SearchingPassenger } from "../components";
 import { blackColor, dangerColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { NavNames, padding } from "../data/general";
-import LottieView from "lottie-react-native";
 import { TouchableOpacity } from "react-native";
-import { MaleAvatarOne } from "../assets/images";
-import { CarIcon, NotificationIcon, Search, SendIcon2, TargetIcon } from "../assets/icons";
+import { NotificationIcon, TargetIcon } from "../assets/icons";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useActionContext, useUserContext } from "../context";
-import { LoadingBars } from "../assets/lotties";
+import { useActionContext, useNavigationContext, useUserContext } from "../context";
+import { passengerList } from "../data/navigationData";
 
 const Header = ()=> {
   const {navigate} = useNavigation();
@@ -116,7 +114,9 @@ const Header = ()=> {
 const Navigation = () => {
   const { navigate } = useNavigation(); 
   const {online} = useUserContext();
+  const {passengers, setUserList, from} = useNavigationContext();
   const { openModal } = useActionContext();
+  const [timing,setTiming] =useState(3000)
 
   const changeOnlineVisibility = useCallback((type) => {
 
@@ -136,6 +136,34 @@ const Navigation = () => {
     }
 
   }, [])
+
+  useEffect(()=>{
+
+    if(online){
+
+      setTimeout(()=>{
+
+        if(timing <= 0){
+
+          setUserList(passengerList)
+
+        }else{
+          
+          setTiming(timing - 1000)
+
+        }
+
+
+      }, 1000)
+
+    }else{
+
+      setUserList([])
+
+    }
+
+  }, [online, timing])
+
   return (
     <LoggedInContainer
       header={<Header />}
@@ -151,7 +179,7 @@ const Navigation = () => {
 
         <Map />
 
-        <View style={{
+        {from && <View style={{
           position: "absolute",
           bottom: 0,
           width: "100%",
@@ -182,53 +210,18 @@ const Navigation = () => {
           
             <View>
 
-              <View style={{
-                padding,
-                paddingBottom: 0
-              }}>
+              {passengers.length < 1? (
+                <>
 
-                <Button onPress={()=>{
-                  changeOnlineVisibility("stop");
-                }} style={{
-                  backgroundColor: dangerColor.default
-                }}>
-                  <Text style={{
-                    color: whiteColor.default,
-                    fontFamily: lato.bold.default
-                  }}>Stop</Text>
-                </Button>
-              </View>
+                <SearchingPassenger />
+                  
+                </>
+              ) : (
 
+                <Passengers />
 
-              <View style={{
-                backgroundColor: "#0074FF",
-                padding: 15,
-                marginTop: 30,
-                borderTopRightRadius: 20,
-                borderTopLeftRadius: 20,
-                alignItems: "center",
-                paddingBottom: 30
-                
-              }}>
+              )}
 
-                <Text style={{
-                  color: whiteColor.default,
-                  fontFamily: lato.bold.default
-                }}>Scanning...</Text>
-
-                <LottieView
-                  style={{
-                    width: 100,
-                    height: 30
-                  }}
-                  source={LoadingBars}
-                  loop
-                  autoPlay
-
-                />
-
-
-              </View>
 
             </View>
 
@@ -253,7 +246,7 @@ const Navigation = () => {
           }
         
 
-        </View>
+        </View>}
 
       </View>
     </LoggedInContainer>

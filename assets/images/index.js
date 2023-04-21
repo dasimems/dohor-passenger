@@ -13,6 +13,7 @@ import Promotion from "./promotion.png"
 import SystemNotification from "./system_notification.png"
 import Coin from "./coin.svg"
 import WalletBackground from "./wallet_background.png"
+import WalletBanner from "./wallet_banner.png"
 
 export {
   logoImage,
@@ -29,5 +30,6 @@ export {
   NotificationSystemSuccess,
   Promotion,
   Coin,
-  WalletBackground
+  WalletBackground,
+  WalletBanner
 };

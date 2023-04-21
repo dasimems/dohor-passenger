@@ -105,6 +105,14 @@ export const NavNames = {
     Icon: UserIcon
   },
 
+  Withdraw: {
+    name: "Withdraw",
+    label: "Withdraw",
+    navShown: false,
+    profileLink: false,
+    Icon: UserIcon
+  },
+
   Password: {
     name: "Password",
     label: "Password",

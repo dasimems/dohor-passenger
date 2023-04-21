@@ -1,6 +1,6 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Button, LoggedInContainer, Logo, Nav, TransactionCard } from "../components";
+import { BankList, Button, FormInputField, LoggedInContainer, Logo, Nav, TransactionCard } from "../components";
 import { blackColor, dangerColor, grayColor, infoColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
@@ -42,7 +42,7 @@ const Header = () => {
                         <Text style={{
                             fontFamily: lato.bold.default,
                             fontSize: 20,
-                        }}>Wallet</Text>
+                        }}>Withdraw</Text>
 
                     </View>
                         
@@ -74,7 +74,7 @@ const Header = () => {
     )
 }
 
-const Wallet = () => {
+const Withdraw = () => {
   const { navigate, goBack } = useNavigation();
   return (
     <LoggedInContainer headerHidden containerStyle={{
@@ -105,21 +105,24 @@ const Wallet = () => {
                     justifyContent: "center",
                     // backgroundColor: "red",
                     paddingBottom: 50,
-                    gap: 7
                 }}>
 
-                    <Text style={{
-                        fontFamily: lato.black.default,
-                        fontSize: 35,
-                        textAlign: "center",
-                        color: primaryColor.default
-                    }}>$7,500</Text>
+                    <View style={{
+                        
+                        flexDirection: "row",
+                        alignItems: 'center',
+                        justifyContent: "center"
+                    }}>
 
-                    <Text style={{
-                        textAlign: "center",
-                        color: blackColor.opacity500,
-                        fontFamily: lato.regular.default
-                    }}>Balance</Text>
+                        <Text style={{
+                            ...styles.walletBannerTextStyle,
+                            color: blackColor.opacity400
+                        }}>Available Balance is </Text>
+                        <Text style={{
+                            ...styles.walletBannerTextStyle
+                        }}>$7,500</Text>
+                    </View>
+
                 </View>
 
 
@@ -129,21 +132,15 @@ const Wallet = () => {
                 alignItems: "center",
                 marginTop: -29,
             }}>
-                <TouchableOpacity onPress={()=>{
-                    navigate(NavNames.Withdraw.name)
-                }} style={{
-                    padding: 20,
-                    backgroundColor: primaryColor.default,
-                    borderRadius: 10,
-                    maxWidth: 270,
+                <FormInputField inputMode="numeric" keyboardType="number-pad" placeholder="Enter Amount($)" style={{
                     width: "100%",
-                    alignItems: "center"
-                }}>
-                    <Text style={{
-                        fontFamily: lato.bold.default,
-                        color: whiteColor.default
-                    }}>Withdraw</Text>
-                </TouchableOpacity>
+                    maxWidth: 270,
+
+                }} inputStyle={{
+                    textAlign: "center",
+                    borderColor: "rgba(0, 0, 0, .06)",
+                    backgroundColor: whiteColor.default
+                }} />
             </View>
 
             <View style={{
@@ -167,42 +164,19 @@ const Wallet = () => {
                         <Text style={{
                             fontFamily: lato.bold.default,
                             color: blackColor.opacity600
-                        }}>History</Text>
+                        }}>Choose bank account</Text>
     
                         <TouchableOpacity>
                             <Text style={{
                                 fontFamily: lato.regular.default,
                                 color: dangerColor.opacity500
-                            }}>See all</Text>
+                            }}>Add new</Text>
     
                         </TouchableOpacity>
     
                     </View>
 
-                    <View>
-
-                        <Text style={{
-                            ...styles.timeFilterStyle,
-                        }}>
-                            June 14
-                        </Text>
-
-                        <TransactionCard title="Fare from rider" price="75" time={Date.now()} type="credit" />
-                        <TransactionCard title="Transfer to bank" price="300" time={Date.now()} type="debit" />
-                    </View>
-
-                    <View>
-
-                        <Text style={{
-                            ...styles.timeFilterStyle,
-                        }}>
-                            June 14
-                        </Text>
-
-                        <TransactionCard title="Fare from parcel sender" price="75" time={Date.now()} type="credit" />
-                        <TransactionCard title="Transfer to bank" price="400" time={Date.now()} type="debit" />
-
-                    </View>
+                    <BankList />
 
 
 
@@ -217,7 +191,7 @@ const Wallet = () => {
   );
 };
 
-export default Wallet;
+export default Withdraw;
 
 const styles = StyleSheet.create({
     actionButtonStyle:{
@@ -242,5 +216,11 @@ const styles = StyleSheet.create({
         fontFamily: lato.bold.default,
         color: blackColor.opacity400,
         marginBottom: 5
+    },
+    walletBannerTextStyle: {
+        fontFamily: lato.black.default,
+        fontSize: 14,
+        textAlign: "center",
+        color: blackColor.opacity600
     }
 });

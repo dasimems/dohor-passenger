@@ -13,7 +13,7 @@ import { useActionContext } from "../../context";
 
 const windowWidth = Dimensions.get("window").width
 
-const LoggedInContainer = ({children, header, headerText, spacing, headerTextStyle, headerStyle, showBackFunction, navHidden, style, containerStyle}) => {
+const LoggedInContainer = ({children, header, headerText, spacing, headerTextStyle, headerStyle, showBackFunction, headerHidden, style, containerStyle}) => {
     const {menuOpened, closeMenu} = useActionContext()
     const {name: screenName} = useRoute();
     const {goBack, navigate} = useNavigation();
@@ -204,7 +204,7 @@ const LoggedInContainer = ({children, header, headerText, spacing, headerTextSty
           ...style
         }}
       >
-          {header? header : <>
+          {!headerHidden && (header? header : <>
           
               <View style={{
                   flexDirection: "row",
@@ -242,7 +242,7 @@ const LoggedInContainer = ({children, header, headerText, spacing, headerTextSty
 
               </View>
           
-          </>}
+          </>)}
         <View
           style={{
             flex: 1,

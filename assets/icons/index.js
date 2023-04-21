@@ -32,6 +32,7 @@ import {
   ArrowLeftRight
 } from "lucide-react-native";
 import MoneySvg from "./money.svg"
+import CarSvg from "./suv.svg"
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Foundation } from "@expo/vector-icons"; 
@@ -297,12 +298,21 @@ export const DotIcon = ({size,  color}) => {
     return <FontAwesome name="dot-circle-o" size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
-export const MoneyIcon = ({size,  color}) => {
+export const MoneyIcon = ({size}) => {
     return <MoneySvg width={size ? size : 20} height={size ? size : 20} />;
+}
+
+export const SuvIcon = ({size}) => {
+    return <CarSvg width={size ? size : 20} height={size ? size : 20} />;
 }
 
 export const CheckCircleIcon = ({size,  color}) => {
     return <FontAwesome name="check-circle" size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+
+export const StarHalfIcon = ({size,  color}) => {
+    return <FontAwesome name="star-half-full" size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
 
