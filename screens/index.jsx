@@ -10,6 +10,7 @@ import OTP from "./OTP"
 import PasswordChange from "./PasswordChange"
 import Profile from "./Profile"
 import ProfileDetails from "./ProfileDetails"
+import Transactions from "./Transactions"
 import Trips from "./Trips"
 import VehicleDetails from "./VehicleDetails"
 import Wallet from "./Wallet"
@@ -31,5 +32,6 @@ export {
     VehicleDetails,
     CreditDetails,
     Withdraw,
-    NewBank
+    NewBank,
+    Transactions
 }

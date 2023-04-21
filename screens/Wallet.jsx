@@ -169,7 +169,9 @@ const Wallet = () => {
                             color: blackColor.opacity600
                         }}>History</Text>
     
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{
+                            navigate(NavNames.Transactions.name)
+                        }}>
                             <Text style={{
                                 fontFamily: lato.regular.default,
                                 color: dangerColor.opacity500
@@ -196,7 +198,7 @@ const Wallet = () => {
                         <Text style={{
                             ...styles.timeFilterStyle,
                         }}>
-                            June 14
+                            June 12
                         </Text>
 
                         <TransactionCard title="Fare from parcel sender" price="75" time={Date.now()} type="credit" />
