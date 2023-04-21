@@ -148,8 +148,7 @@ const Wallet = () => {
 
             <View style={{
                 flex: 1,
-                padding,
-                paddingVertical: 20,
+                paddingHorizontal: padding,
                 paddingTop: 30
             }}>
 

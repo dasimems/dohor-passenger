@@ -19,7 +19,7 @@ const Transactions = () => {
 
         <View style={{
             flex: 1,
-            paddingVertical: 15,
+            paddingTop: 15,
             
         }}>
 
@@ -46,6 +46,32 @@ const Transactions = () => {
                         ...styles.timeFilterStyle,
                     }}>
                         June 12
+                    </Text>
+
+                    <TransactionCard title="Fare from parcel sender" price="75" time={Date.now()} type="credit" />
+                    <TransactionCard title="Transfer to bank" price="400" time={Date.now()} type="debit" />
+
+                </View>
+
+                <View>
+
+                    <Text style={{
+                        ...styles.timeFilterStyle,
+                    }}>
+                        June 11
+                    </Text>
+
+                    <TransactionCard title="Fare from parcel sender" price="75" time={Date.now()} type="credit" />
+                    <TransactionCard title="Transfer to bank" price="400" time={Date.now()} type="debit" />
+
+                </View>
+
+                <View>
+
+                    <Text style={{
+                        ...styles.timeFilterStyle,
+                    }}>
+                        June 07
                     </Text>
 
                     <TransactionCard title="Fare from parcel sender" price="75" time={Date.now()} type="credit" />
