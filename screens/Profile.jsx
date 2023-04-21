@@ -57,7 +57,7 @@ const Profile = () => {
     {
         stat: "4.90",
         label: "Ratings",
-        action: ()=> navigate(NavNames.Trips.name)
+        action: ()=> navigate(NavNames.Ratings.name)
     },
 
     {
@@ -135,7 +135,6 @@ const Profile = () => {
                         }}>
 
                             <Stats stats={stats} style={{
-                                maxWidth: "98%",
                                 shadowColor: blackColor.opacity500,
                                 borderColor: "rgba(0, 0, 0, .01)",
                             }} />

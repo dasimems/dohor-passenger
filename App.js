@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CameraContainer, Modal, Providers, ScreenContainer } from './components';
-import { ChatDetails, Chats, CreditDetails, GettingStarted, Login, Navigation, NewBank, Notifications, OTP, PasswordChange, Profile, ProfileDetails, Transactions, Trips, VehicleDetails, Wallet, Withdraw } from './screens';
+import { ChatDetails, Chats, CreditDetails, GettingStarted, Login, Navigation, NewBank, Notifications, OTP, PasswordChange, Profile, ProfileDetails, Rating, Transactions, Trips, VehicleDetails, Wallet, Withdraw } from './screens';
 import { NavNames } from './data/general';
 
 
@@ -54,6 +54,7 @@ export default function App() {
                 <Stack.Screen name={NavNames.Withdraw.name} component={Withdraw} />
                 <Stack.Screen name={NavNames.NewBank.name} component={NewBank} />
                 <Stack.Screen name={NavNames.Transactions.name} component={Transactions} />
+                <Stack.Screen name={NavNames.Ratings.name} component={Rating} />
                 <Stack.Screen name={NavNames.ProfileSettings.name} component={ProfileDetails} options={{
                   animation: "slide_from_left"
                 }} />
