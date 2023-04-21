@@ -155,7 +155,7 @@ const Wallet = () => {
 
 
 
-                <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{
+                <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
                     gap: 25
                 }}>
                     <View style={{

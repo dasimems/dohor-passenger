@@ -39,7 +39,7 @@ const NewBank = () => {
                     color: blackColor.opacity500
                 }}>Kindly provide your bank account details  where you can easily withdraw your money to</Text>
 
-                <ScrollView contentContainerStyle={{
+                <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
                     gap: 10,
                     paddingVertical: 10
                 }}>
