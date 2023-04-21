@@ -30,7 +30,8 @@ const ProfileRoute = ({label, name, icon}) => {
         {icon}
        <Text style={{
         fontFamily: lato.bold.default,
-        fontSize: 15
+        fontSize: 14,
+        color: blackColor.opacity500
        }}>{label}</Text>
       </View>
 

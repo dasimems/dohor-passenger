@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { Button, LoggedInContainer, Logo, Nav, ProfileRoute, RoundedImage } from "../components";
+import { Button, LoggedInContainer, Logo, Nav, ProfileDetailsCard, ProfileRoute, RoundedImage, Stats } from "../components";
 import { blackColor, dangerColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
@@ -47,6 +47,25 @@ const Profile = () => {
     
   const {  navigate } = useNavigation();
 
+  const stats = [
+    {
+        stat: "3,251",
+        label: "Trips",
+        action: ()=> navigate(NavNames.Trips.name)
+    },
+
+    {
+        stat: "4.90",
+        label: "Ratings",
+        action: ()=> navigate(NavNames.Trips.name)
+    },
+
+    {
+        stat: "2",
+        label: "Months"
+    }
+  ]
+
   return (
     <LoggedInContainer
         header={<Header />}
@@ -57,70 +76,106 @@ const Profile = () => {
             flex: 1
         }}>
 
-            <View style={{
-                alignItems: "center",
-                marginTop: 20,
-                gap: 10
-
-            }}>
-
-                <RoundedImage 
-                    imagePadding={3}
-                    size={70}
-                    imageParentBackground={blackColor.opacity100}
-                    image={MaleAvatarOne}
-                />
-
-                <Text style={{
-                    fontFamily: lato.bold.default,
-                    color: blackColor.opacity600,
-                    fontSize: 18,
-                    textAlign: "center"
-                }}>John Doe</Text>
-
-                <Text style={{
-                    fontFamily: lato.regular.default,
-                    color: blackColor.opacity500,
-                    fontSize: 13,
-                    textAlign: "center"
-                }}>+(234) 903-366-4645</Text>
-
-                <View style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: 3
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
+                    gap: 28
                 }}>
 
-                    <StarIcon set="bold" color={"#FFCC00"} /> 
+                <View style={{
+                    alignItems: "center",
+                    marginTop: 20,
+                    gap: 10
+
+                }}>
+
+                    <RoundedImage 
+                        imagePadding={3}
+                        size={70}
+                        imageParentBackground={blackColor.opacity100}
+                        image={MaleAvatarOne}
+                    />
+
+                    <Text style={{
+                        fontFamily: lato.bold.default,
+                        color: blackColor.opacity600,
+                        fontSize: 18,
+                        textAlign: "center"
+                    }}>John Doe</Text>
 
                     <Text style={{
                         fontFamily: lato.regular.default,
                         color: blackColor.opacity500,
                         fontSize: 13,
                         textAlign: "center"
-                    }}>4.9</Text>
+                    }}>+(234) 903-366-4645</Text>
+
+                    <View style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: 3
+                    }}>
+
+                        <StarIcon set="bold" color={"#FFCC00"} /> 
+
+                        <Text style={{
+                            fontFamily: lato.regular.default,
+                            color: blackColor.opacity500,
+                            fontSize: 13,
+                            textAlign: "center"
+                        }}>4.9</Text>
+
+                    </View>
 
                 </View>
 
-            </View>
+                <View style={{
+                    gap: 28
+                }}>
+                        <View style={{
+                            alignItems: "center",
+                        }}>
 
-            <View style={{
-                marginTop: 20,
-                flex: 1
-            }}>
+                            <Stats stats={stats} style={{
+                                maxWidth: "98%",
+                                shadowColor: blackColor.opacity500,
+                                borderColor: "rgba(0, 0, 0, .01)",
+                            }} />
+                        </View>
 
-                <FlatList 
-                    data={profileLinks}
-                    extraData={profileLinks}
-                    keyExtractor={((_, index)=>index)}
-                    renderItem={({item: {Icon, label, name}})=>(
+                        <View style={{
+                            gap: 20,
+                        }}>
 
-                        <ProfileRoute label={label} name={name} icon={<Icon color={primaryColor.default} set="bold" size={25} />} />
+                            <ProfileDetailsCard title="Member since" value="February 15, 2023" />
+                            <ProfileDetailsCard title="Car Model" value="Mercedes-Benz E-Class" />
+                            <ProfileDetailsCard title="Car Model" value="Mercedes-Benz E-Class" />
 
-                    )}
-                />
-                
-            </View>
+                        </View>
+
+                        <View style={{
+                            paddingTop: 10,
+                            gap: 12
+                        }}>
+
+                            <Text style={{
+                                fontFamily: lato.bold.default,
+                                fontSize: 15
+                                
+                            }}>Account Settings</Text>
+
+                            {profileLinks.map(( {Icon, label, name}, index)=>(
+
+                                <ProfileRoute label={label} name={name} key={index} icon={<Icon color={primaryColor.default} set="bold" size={25} />} />
+
+                            ))}
+
+                        </View>
+
+
+
+
+                    
+                </View>
+            </ScrollView>
 
         </View>
         <View style={{
@@ -128,7 +183,7 @@ const Profile = () => {
             paddingVertical: 20
         }}>
             <TouchableOpacity style={{
-                paddingVertical: 15,
+                paddingVertical: 10,
                 paddingHorizontal: 20,
                 backgroundColor: dangerColor.opacity600,
                 borderRadius: 10,
