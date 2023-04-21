@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CameraContainer, Modal, Providers, ScreenContainer } from './components';
 import { ChatDetails, Chats, CreditDetails, GettingStarted, Login, Navigation, NewBank, Notifications, OTP, PasswordChange, Profile, ProfileDetails, Rating, Transactions, Trips, VehicleDetails, Wallet, Withdraw } from './screens';
 import { NavNames } from './data/general';
+import RatingDetails from './screens/RatingDetails';
 
 
 const Stack = createNativeStackNavigator();
@@ -55,6 +56,7 @@ export default function App() {
                 <Stack.Screen name={NavNames.NewBank.name} component={NewBank} />
                 <Stack.Screen name={NavNames.Transactions.name} component={Transactions} />
                 <Stack.Screen name={NavNames.Ratings.name} component={Rating} />
+                <Stack.Screen name={NavNames.RatingDetails.name} component={RatingDetails} />
                 <Stack.Screen name={NavNames.ProfileSettings.name} component={ProfileDetails} options={{
                   animation: "slide_from_left"
                 }} />

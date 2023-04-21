@@ -30,6 +30,7 @@ import SearchingPassenger from "./navigation/inner/SearchingPassenger"
 import NotificationCard from "./notification/NotificationCard"
 import ProfileDetailsCard from "./profile/ProfileDetailsCard"
 import ProfileHeader from "./profile/inner/Header"
+import RatingBar from "./profile/inner/ratings/RatingBar"
 import ReviewCard from "./profile/inner/ratings/ReviewCard"
 import ReviewList from "./profile/inner/ratings/ReviewList"
 import TripCard from "./trips/TripCard"
@@ -77,6 +78,7 @@ export {
     StatCard,
     ProfileDetailsCard,
     ReviewCard,
-    ReviewList
+    ReviewList,
+    RatingBar
 
 }

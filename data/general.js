@@ -113,6 +113,14 @@ export const NavNames = {
     Icon: Bank
   },
 
+  RatingDetails: {
+    name: "RatingDetails",
+    label: "Rating Details",
+    navShown: false,
+    profileLink: false,
+    Icon: StarIcon
+  },
+
   Ratings: {
     name: "Ratings",
     label: "Ratings",

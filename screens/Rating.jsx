@@ -59,7 +59,7 @@ const Rating = () => {
     {
         stat: "4.9",
         label: "Rate",
-        action: ()=> navigate(NavNames.Trips.name)
+        action: ()=> navigate(NavNames.RatingDetails.name)
     },
 
     {

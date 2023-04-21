@@ -11,6 +11,7 @@ import PasswordChange from "./PasswordChange"
 import Profile from "./Profile"
 import ProfileDetails from "./ProfileDetails"
 import Rating from "./Rating"
+import RatingDetails from "./RatingDetails"
 import Transactions from "./Transactions"
 import Trips from "./Trips"
 import VehicleDetails from "./VehicleDetails"
@@ -35,5 +36,6 @@ export {
     Withdraw,
     NewBank,
     Transactions,
-    Rating
+    Rating,
+    RatingDetails
 }
