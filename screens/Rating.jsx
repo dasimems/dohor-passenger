@@ -65,13 +65,13 @@ const Rating = () => {
     {
         stat: "92%",
         label: "Acceptance",
-        action: ()=> navigate(NavNames.Ratings.name)
+        action: ()=> navigate(NavNames.ExtraRatingDetails.name, {type: "accept"})
     },
 
     {
         stat: "8%",
         label: "Cancellation",
-        action: ()=> navigate(NavNames.Ratings.name)
+        action: ()=> navigate(NavNames.ExtraRatingDetails.name, {type: "cancel"})
     }
   ]
 

@@ -121,6 +121,14 @@ export const NavNames = {
     Icon: StarIcon
   },
 
+  ExtraRatingDetails: {
+    name: "ExtraRatingDetails",
+    label: "Extra Rating Details",
+    navShown: false,
+    profileLink: false,
+    Icon: StarIcon
+  },
+
   Ratings: {
     name: "Ratings",
     label: "Ratings",

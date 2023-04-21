@@ -59,6 +59,7 @@ import {
   Location
 } from "react-native-iconly";
 import { X } from "lucide-react-native";
+import { Check } from "lucide-react-native";
 
 export const Settings = ({size, color}) => {
     return <SettingsIcon size={size? size : 20} color={color? color : blackColor.default} />
@@ -118,6 +119,10 @@ export const Bank = ({size, color}) => {
 
 export const ChatIcon2 = ({size, color}) => {
     return <MessageCircle size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+export const CheckIcon = ({size, color}) => {
+    return <Check size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
 export const Search = ({size, color}) => {
