@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { blackColor } from '../../assets/colors'
 import MapView, {Marker} from "react-native-maps";
 import useNavigationContext from '../../context/navigationContext';
@@ -8,7 +8,13 @@ import { LocationPin } from '../../assets/lotties';
 import { lato } from '../../fonts';
 
 const Map = () => {
-  const {from} = useNavigationContext();
+  const {from, fetchLocation} = useNavigationContext();
+
+  useEffect(()=>{
+    if(!from){
+      fetchLocation();
+    }
+  }, [from])
   return (
     <View style={{
         flex: 1,
