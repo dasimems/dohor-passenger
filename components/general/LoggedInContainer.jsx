@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, Dimensions, FlatList, Animated } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Dimensions, FlatList, Animated, PanResponder } from "react-native";
 import React, { useEffect, useRef } from "react";
 import { primaryColor, whiteColor } from "../../assets/colors";
 import { NavNames, padding, screenNav } from "../../data/general";
@@ -20,6 +20,25 @@ const LoggedInContainer = ({children, header, headerText, spacing, headerTextSty
     const translateAnimation = useRef(new Animated.Value(0)).current;
     const scaleAnimation = useRef(new Animated.Value(1)).current;
     const borderRadiusAnimation = useRef(new Animated.Value(0)).current;
+    const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderMove: (event, gesture) => {
+        if (gesture.dx < 0) {
+
+        }
+      },
+      onPanResponderRelease: (event, gesture) => {
+        if (gesture.dx < -windowWidth / 3) {
+
+          closeMenu();
+         
+        } else {
+          
+        }
+      },
+    })
+  ).current;
     // (windowWidth * 0.95)
     const animationDuration = 300;
 
@@ -83,7 +102,7 @@ const LoggedInContainer = ({children, header, headerText, spacing, headerTextSty
 
     <>
 
-      <View style={{
+      <View {...panResponder.panHandlers} style={{
         
           ...StyleSheet.absoluteFillObject,
           backgroundColor: primaryColor.default
