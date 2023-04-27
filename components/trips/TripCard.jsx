@@ -1,30 +1,40 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { blackColor, dangerColor, pendingColor, successColor, whiteColor } from "../../assets/colors";
 import { formatDate } from "../../functions";
 import { lato } from "../../fonts";
 import { DotIcon, LocationIcon, MoneyIcon } from "../../assets/icons";
+import { NavNames } from "../../data/general";
+import { useNavigation } from "@react-navigation/native";
 
-const TripCard = ({ date, name, price, image, from, to, status }) => {
+const TripCard = ({ date, name, id, price, image, from, to, status, plain }) => {
   const imageWidth = 50;
   const viewGap = 20;
   const [statusColor, setStatusColor] = useState(pendingColor.default)
+  const {navigate} = useNavigation()
 
   useEffect(()=>{
 
-    if(status.toLowerCase() === "completed"){
-      setStatusColor(successColor.default)
-    }else if(status.toLowerCase() === "cancelled"){
-      setStatusColor(dangerColor.default)
+    if(status){
+
+      if(status.toLowerCase() === "completed"){
+        setStatusColor(successColor.default)
+      }else if(status.toLowerCase() === "cancelled"){
+        setStatusColor(dangerColor.default)
+      }
     }
+
 
   }, [status])
 
   return (
-    <View
+    <TouchableOpacity
+      onPress={()=>{
+        navigate(NavNames.TripsDetails.name, {id});
+      }}
       style={{
         elevation: 2,
-        shadowColor: blackColor.opacity300,
+        shadowColor: !plain? blackColor.opacity300 : "transparent",
         shadowOffset: {
           width: 0,
           height: 1
@@ -192,7 +202,7 @@ const TripCard = ({ date, name, price, image, from, to, status }) => {
           </View>
 
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

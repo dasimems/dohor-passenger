@@ -15,6 +15,7 @@ import ProfileDetails from "./ProfileDetails"
 import Rating from "./Rating"
 import RatingDetails from "./RatingDetails"
 import Transactions from "./Transactions"
+import TripDetails from "./TripDetails"
 import Trips from "./Trips"
 import VehicleDetails from "./VehicleDetails"
 import Wallet from "./Wallet"
@@ -41,5 +42,6 @@ export {
     Rating,
     RatingDetails,
     ExtraRateDetails,
-    Earnings
+    Earnings,
+    TripDetails
 }

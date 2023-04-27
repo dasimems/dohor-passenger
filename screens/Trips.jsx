@@ -21,7 +21,9 @@ const Trips = () => {
 
   return (
     
-    <LoggedInContainer showBackFunction headerText="History">
+    <LoggedInContainer headerTextStyle={{
+      fontSize: 18
+    }} showBackFunction headerText="Trips">
       <View style={{
         marginTop: 10,
         flex: 1
@@ -43,9 +45,9 @@ const Trips = () => {
             data={tripData}
             extraData={tripData}
             keyExtractor={(_, index) => index}
-            renderItem={({item: {date, passengerName, price, trip, status, image}})=>{
+            renderItem={({item: {date, id, passengerName, price, trip, status, image}})=>{
               
-              return <TripCard image={image} date={date} name={passengerName} price={price} from={trip?.from} to={trip?.to} status={status} />;}}
+              return <TripCard id={id} image={image} date={date} name={passengerName} price={price} from={trip?.from} to={trip?.to} status={status} />;}}
           />
 
         </View>

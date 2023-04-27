@@ -76,8 +76,16 @@ export const NavNames = {
 
   Trips: {
     name: "Trips",
-    label: "History",
+    label: "Trips",
     navShown: true,
+    profileLink: false,
+    Icon: HistoryIcon
+  },
+
+  TripsDetails: {
+    name: "TripsDetails",
+    label: "Trips Details",
+    navShown: false,
     profileLink: false,
     Icon: HistoryIcon
   },
