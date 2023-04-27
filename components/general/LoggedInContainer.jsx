@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View, Dimensions, FlatList, Animated, PanResponder } from "react-native";
 import React, { useEffect, useRef } from "react";
-import { primaryColor, whiteColor } from "../../assets/colors";
+import { blackColor, primaryColor, whiteColor } from "../../assets/colors";
 import { NavNames, padding, screenNav } from "../../data/general";
 import { AngleLeft, AngleRight } from "../../assets/icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -29,7 +29,7 @@ const LoggedInContainer = ({children, header, headerText, spacing, headerTextSty
         }
       },
       onPanResponderRelease: (event, gesture) => {
-        if (gesture.dx < -windowWidth / 3) {
+        if (gesture.dx < -50) {
 
           closeMenu();
          
@@ -271,6 +271,16 @@ const LoggedInContainer = ({children, header, headerText, spacing, headerTextSty
         >
           {children}
         </View>
+
+        {menuOpened && <View {...panResponder.panHandlers} style={{
+          width: '100%',
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          backgroundColor: blackColor.opacity200,
+          zIndex: 9,
+        }}></View>}
       </Animated.View>
     
     </>
