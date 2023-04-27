@@ -17,8 +17,17 @@ const Map = () => {
 
       
       {from? <MapView style={{
-          flex: 1
+          width: "100%",
+          height: "110%",
+          marginTop: -40
+
         }}
+        provider='google'
+        showsUserLocation={true}
+        followsUserLocation={true}
+        showsCompass={true}
+        showsTraffic={true}
+
         initialRegion={{
           latitude: from && from.latitude? from?.latitude: 37.78825,
           longitude: from && from.longitude? from?.longitude: -122.4324,

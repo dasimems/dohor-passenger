@@ -17,7 +17,14 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.dasimems.dohor",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "REASON_FOR_REQUEST",
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      }
     },
     "android": {
       "package": "com.dasimems.dohor",

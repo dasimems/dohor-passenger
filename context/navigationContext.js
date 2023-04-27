@@ -65,7 +65,7 @@ export const NavigationProvider = ({ children }) => {
       return;
     }
 
-    let location = await Location.getCurrentPositionAsync({});
+    let location = await Location.getCurrentPositionAsync({accuracy: Location.Accuracy.Highest, maximumAge: 10000});
     setFrom(location?.coords)
     // console.log(location?.coords)
   }, []);

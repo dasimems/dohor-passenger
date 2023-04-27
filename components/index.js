@@ -1,6 +1,7 @@
 import MessageCard from "./chatDetails/MessageCard"
 import ChatCard from "./chats/ChatCard"
 import ChatOptions from "./chats/ChatOptions"
+import EarningChart from "./earnings/EarningChart"
 import Button from "./general/Button"
 import CameraContainer from "./general/Camera"
 import CountryFlag from "./general/CountryFlag"
@@ -79,6 +80,7 @@ export {
     ProfileDetailsCard,
     ReviewCard,
     ReviewList,
-    RatingBar
+    RatingBar,
+    EarningChart
 
 }

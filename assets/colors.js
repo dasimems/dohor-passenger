@@ -53,15 +53,15 @@ export const dangerColor = {
 
 export const successColor = {
     default: "rgb(132, 204, 22)",
-    opacity100: "rgb(132, 204, 22, .1)",
-    opacity200: "rgb(132, 204, 22, .2)",
-    opacity300: "rgb(132, 204, 22, .3)",
-    opacity400: "rgb(132, 204, 22, .4)",
-    opacity500: "rgb(132, 204, 22, .5)",
-    opacity600: "rgb(132, 204, 22, .6)",
-    opacity700: "rgb(132, 204, 22, .7)",
-    opacity800: "rgb(132, 204, 22, .8)",
-    opacity900: "rgb(132, 204, 22, .9)",
+    opacity100: "rgba(132, 204, 22, .1)",
+    opacity200: "rgba(132, 204, 22, .2)",
+    opacity300: "rgba(132, 204, 22, .3)",
+    opacity400: "rgba(132, 204, 22, .4)",
+    opacity500: "rgba(132, 204, 22, .5)",
+    opacity600: "rgba(132, 204, 22, .6)",
+    opacity700: "rgba(132, 204, 22, .7)",
+    opacity800: "rgba(132, 204, 22, .8)",
+    opacity900: "rgba(132, 204, 22, .9)",
     
 }
 

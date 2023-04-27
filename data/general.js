@@ -1,3 +1,4 @@
+import { BarChart } from "lucide-react-native";
 import { Bank, CarIcon, ChatIcon, ConvertIcon, CustomerSupport, HistoryIcon, HomeIcon, Menu, NotificationIcon, SecurityIcon, StarIcon, UserIcon, Wallet2 } from "../assets/icons";
 import { Coin } from "../assets/images";
 import CountryListJson from "./all_country.json"
@@ -47,6 +48,14 @@ export const NavNames = {
     navShown: true,
     profileLink: false,
     Icon: HomeIcon
+  },
+
+  Earnings: {
+    name: "Earnings",
+    label: "Earnings",
+    navShown: true,
+    profileLink: false,
+    Icon: BarChart
   },
 
   Wallet: {

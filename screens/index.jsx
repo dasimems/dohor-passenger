@@ -1,6 +1,7 @@
 import ChatDetails from "./ChatDetails"
 import Chats from "./Chats"
 import CreditDetails from "./CreditDetails"
+import Earnings from "./Earnings"
 import ExtraRateDetails from "./ExtraRateDetails"
 import GettingStarted from "./GettingStarted"
 import Login from "./Login"
@@ -39,5 +40,6 @@ export {
     Transactions,
     Rating,
     RatingDetails,
-    ExtraRateDetails
+    ExtraRateDetails,
+    Earnings
 }
