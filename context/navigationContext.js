@@ -74,6 +74,16 @@ export const NavigationProvider = ({ children }) => {
     fetchLocation()
   }, [])
 
+  useEffect(()=>{
+    if(state.from)(
+      Location.watchPositionAsync({accuracy: Location.Accuracy.Highest, timeInterval: 100, distanceInterval: 10}, (location) => {
+
+        setFrom(location?.coords)
+        
+      })
+    )
+  }, [state.from])
+
   return <NavigationContext.Provider value={{ ...state, setPassengerSelected, setUserList, setTo, setFrom, fetchLocation }}>
       {children}
     </NavigationContext.Provider>;

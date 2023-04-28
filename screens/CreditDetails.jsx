@@ -5,7 +5,7 @@ import { blackColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { Coin } from "../assets/images";
-import { ConvertIcon, Wallet } from "../assets/icons";
+import { ConvertIcon, UserIcon, Wallet } from "../assets/icons";
 
 const CreditDetails = () => {
   const { navigate } = useNavigation();
@@ -69,9 +69,9 @@ const CreditDetails = () => {
                 <Text style={{
                     fontFamily: lato.bold.default,
                     color: whiteColor.default
-                }}>Convert</Text>
+                }}>Refer and Earn</Text>
 
-                <ConvertIcon color={whiteColor.default} size={14} />
+                <UserIcon color={whiteColor.default} size={14} />
             </View>
         </Button>
 
@@ -91,9 +91,9 @@ const CreditDetails = () => {
                 <Text style={{
                     fontFamily: lato.bold.default,
                     color: whiteColor.default
-                }}>Transfer</Text>
+                }}>Convert</Text>
 
-                <Wallet color={whiteColor.default} size={14} />
+                <ConvertIcon color={whiteColor.default} size={14} />
 
             </View>
         </Button>

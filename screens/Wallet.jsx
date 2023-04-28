@@ -47,7 +47,7 @@ const Header = () => {
                     </View>
                         
 
-                    {/* <TouchableOpacity onPress={()=>{
+                    <TouchableOpacity onPress={()=>{
                         navigate(NavNames.CreditDetails.name)
                     }} style={{
                         backgroundColor: blackColor.opacity100,
@@ -66,7 +66,7 @@ const Header = () => {
                             fontFamily: lato.bold.default,
                             fontSize: 12,
                         }}>2500</Text>
-                    </TouchableOpacity> */}
+                    </TouchableOpacity>
 
                 </SafeAreaView>
         
@@ -142,7 +142,7 @@ const Wallet = () => {
                     <Text style={{
                         fontFamily: lato.bold.default,
                         color: whiteColor.default
-                    }}>Withdraw</Text>
+                    }}>Add Funds</Text>
                 </TouchableOpacity>
             </View>
 
