@@ -6,6 +6,7 @@ import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { Coin } from "../assets/images";
 import { ConvertIcon, UserIcon, Wallet } from "../assets/icons";
+import { NavNames } from "../data/general";
 
 const CreditDetails = () => {
   const { navigate } = useNavigation();
@@ -52,7 +53,9 @@ const CreditDetails = () => {
 
         </View>
 
-        <Button style={{
+        <Button onPress={()=>{
+            navigate(NavNames.Referrer.name)
+        }} style={{
             alignItems: "center",
             justifyContent: "center",
             padding: 20,

@@ -14,6 +14,8 @@ import SystemNotification from "./system_notification.png"
 import Coin from "./coin.svg"
 import WalletBackground from "./wallet_background.png"
 import WalletBanner from "./wallet_banner.png"
+import RefererImageSvg from "./referrer_image.svg"
+import RefererImage from "./referrer_image.png"
 
 export {
   logoImage,
@@ -31,5 +33,7 @@ export {
   Promotion,
   Coin,
   WalletBackground,
-  WalletBanner
+  WalletBanner,
+  RefererImage,
+  RefererImageSvg
 };

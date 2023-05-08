@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CameraContainer, Modal, Providers, ScreenContainer } from './components';
-import { ChatDetails, Chats, CreditDetails, Earnings, ExtraRateDetails, GettingStarted, Login, Navigation, NewBank, Notifications, OTP, PasswordChange, Profile, ProfileDetails, Rating, Transactions, TripDetails, Trips, VehicleDetails, Wallet, Withdraw } from './screens';
+import { ChatDetails, Chats, CreditDetails, ExtraRateDetails, GettingStarted, Login, Navigation, NewBank, Notifications, OTP, Profile, ProfileDetails, Rating, RefferalDetails, Transactions, TripDetails, Trips, Wallet, Withdraw } from './screens';
 import { NavNames } from './data/general';
 import RatingDetails from './screens/RatingDetails';
 
@@ -58,16 +58,9 @@ export default function App() {
                 <Stack.Screen name={NavNames.Ratings.name} component={Rating} />
                 <Stack.Screen name={NavNames.RatingDetails.name} component={RatingDetails} />
                 <Stack.Screen name={NavNames.ExtraRatingDetails.name} component={ExtraRateDetails} />
-                <Stack.Screen name={NavNames.Earnings.name} component={Earnings} />
                 <Stack.Screen name={NavNames.TripsDetails.name} component={TripDetails} />
+                <Stack.Screen name={NavNames.Referrer.name} component={RefferalDetails} />
                 <Stack.Screen name={NavNames.ProfileSettings.name} component={ProfileDetails} options={{
-                  animation: "slide_from_left"
-                }} />
-                <Stack.Screen name={NavNames.Password.name} component={PasswordChange} options={{
-                  animation: "slide_from_left"
-                }} />
-
-                <Stack.Screen name={NavNames.VehicleDetails.name} component={VehicleDetails} options={{
                   animation: "slide_from_left"
                 }} />
 

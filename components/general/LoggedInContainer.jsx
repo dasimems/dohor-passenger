@@ -149,7 +149,7 @@ const LoggedInContainer = ({children, header, headerText, spacing, headerTextSty
                 fontSize: 12
               }}>+ (234) 903-3663-4645</Text>
 
-              {/* <TouchableOpacity onPress={()=>{
+              <TouchableOpacity onPress={()=>{
                 closeMenu()
                 setTimeout(()=>{
                   navigate(NavNames.CreditDetails.name)
@@ -175,7 +175,7 @@ const LoggedInContainer = ({children, header, headerText, spacing, headerTextSty
                 }}>2500</Text>
 
                 <AngleRight size={14} />
-              </TouchableOpacity> */}
+              </TouchableOpacity>
 
             </View>
           </View>

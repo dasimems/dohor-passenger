@@ -35,6 +35,14 @@ export const NavNames = {
     profileLink: false,
     Icon: Menu
   },
+
+  Referrer: {
+    name: "Referer",
+    label: "Referrer",
+    navShown: false,
+    profileLink: false,
+    Icon: Menu
+  },
   OTP: {
     name: "OTP",
     label: "OTP",
@@ -48,14 +56,6 @@ export const NavNames = {
     navShown: true,
     profileLink: false,
     Icon: HomeIcon
-  },
-
-  Earnings: {
-    name: "Earnings",
-    label: "Earnings",
-    navShown: true,
-    profileLink: false,
-    Icon: BarChart
   },
 
   Wallet: {
@@ -168,22 +168,6 @@ export const NavNames = {
     navShown: false,
     profileLink: false,
     Icon: Bank
-  },
-
-  Password: {
-    name: "Password",
-    label: "Password",
-    navShown: false,
-    profileLink: true,
-    Icon: SecurityIcon
-  },
-
-  VehicleDetails: {
-    name: "VehicleDetails",
-    label: "Vehicle Details",
-    navShown: false,
-    profileLink: true,
-    Icon: CarIcon
   },
 
   CreditDetails: {

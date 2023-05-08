@@ -57,7 +57,6 @@ const Profile = () => {
     {
         stat: "4.90",
         label: "Ratings",
-        action: ()=> navigate(NavNames.Ratings.name)
     },
 
     {
@@ -145,8 +144,7 @@ const Profile = () => {
                         }}>
 
                             <ProfileDetailsCard title="Member since" value="February 15, 2023" />
-                            <ProfileDetailsCard title="Car Model" value="Mercedes-Benz E-Class" />
-                            <ProfileDetailsCard title="Car Model" value="Mercedes-Benz E-Class" />
+                            <ProfileDetailsCard title="Gender" value="Male" />
 
                         </View>
 
