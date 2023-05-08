@@ -1,11 +1,23 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { banks } from '../../data/walletData'
 import BankCard from './inner/BankCard'
 
-const BankList = () => {
+const BankList = ({onChange}) => {
+
+  if (!onChange) {
+    onChange = () => {};
+  }
 
     const [activeCard, setActiveCard] = useState("")
+
+    const changeBank = useCallback((bank)=>{
+      onChange(bank);
+    }, [onChange])
+
+    useEffect(()=>{
+      changeBank(activeCard)
+    }, [activeCard, changeBank])
 
   return (
     <View style={{

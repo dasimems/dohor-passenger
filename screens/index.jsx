@@ -1,3 +1,4 @@
+import AddCard from "./AddCard"
 import ChatDetails from "./ChatDetails"
 import Chats from "./Chats"
 import CreditDetails from "./CreditDetails"
@@ -39,5 +40,6 @@ export {
     RatingDetails,
     ExtraRateDetails,
     TripDetails,
-    RefferalDetails
+    RefferalDetails,
+    AddCard
 }

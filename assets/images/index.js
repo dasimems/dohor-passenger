@@ -16,6 +16,8 @@ import WalletBackground from "./wallet_background.png"
 import WalletBanner from "./wallet_banner.png"
 import RefererImageSvg from "./referrer_image.svg"
 import RefererImage from "./referrer_image.png"
+import MasterCardIcon from "./master_card_icon.svg"
+import CreditCardIcon from "./credit_card.svg"
 
 export {
   logoImage,
@@ -35,5 +37,7 @@ export {
   WalletBackground,
   WalletBanner,
   RefererImage,
-  RefererImageSvg
+  RefererImageSvg,
+  MasterCardIcon,
+  CreditCardIcon
 };

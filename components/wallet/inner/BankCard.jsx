@@ -3,7 +3,7 @@ import React from 'react'
 import { lato } from '../../../fonts'
 import { blackColor, primaryColor } from '../../../assets/colors'
 import { TouchableOpacity } from 'react-native'
-import { Bank } from '../../../assets/icons'
+import { MasterCardIcon } from '../../../assets/images'
 
 const BankCard = ({bankName, accountNumber, id, activeId, onChange, accountName}) => {
 
@@ -39,7 +39,7 @@ const BankCard = ({bankName, accountNumber, id, activeId, onChange, accountName}
 
         }}>
 
-            <Bank size={28} />
+            <MasterCardIcon size={28} />
 
             <View style={{
                 gap: 4
@@ -48,12 +48,12 @@ const BankCard = ({bankName, accountNumber, id, activeId, onChange, accountName}
 
                 <Text style={{
                     fontFamily: lato.black.default
-                }}>{bankName}</Text>
+                }}>******* 6474</Text>
 
                 <Text style={{
                     fontFamily: lato.regular.default,
                     color: blackColor.opacity500
-                }}>{accountNumber.slice(0, 3)}****{accountNumber.slice(accountNumber.length - 3,)}</Text>
+                }}>Expires 05/2020</Text>
 
             </View>
         </View>

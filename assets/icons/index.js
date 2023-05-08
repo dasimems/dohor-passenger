@@ -29,7 +29,8 @@ import {
   RefreshCcw,
   ChevronRight,
   MinusCircle,
-  ArrowLeftRight
+  ArrowLeftRight,
+  Calendar
 } from "lucide-react-native";
 import MoneySvg from "./money.svg"
 import CarSvg from "./suv.svg"
@@ -60,9 +61,25 @@ import {
 } from "react-native-iconly";
 import { X } from "lucide-react-native";
 import { Check } from "lucide-react-native";
+import { CreditCard } from "lucide-react-native";
+import { Info } from "lucide-react-native";
 
 export const Settings = ({size, color}) => {
     return <SettingsIcon size={size? size : 20} color={color? color : blackColor.default} />
+}
+
+export const CreditCardIcon = ({size, color}) => {
+    return <CreditCard size={size? size : 20} color={color? color : blackColor.default} />
+}
+
+
+export const InfoIcon = ({size, color}) => {
+    return <Info size={size? size : 20} color={color? color : blackColor.default} />
+}
+
+
+export const CalendarIcon = ({size, color}) => {
+    return <Calendar size={size? size : 20} color={color? color : blackColor.default} />
 }
 
 export const Dashboard = ({size, color}) => {

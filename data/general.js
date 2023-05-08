@@ -177,6 +177,14 @@ export const NavNames = {
     profileLink: false,
     Icon: Coin
   },
+
+   AddCard: {
+    name: "AddCard",
+    label: "Add Card",
+    navShown: false,
+    profileLink: false,
+    Icon: Coin
+  },
   // CustomerSupport: {
   //   name: "CustomerSupport",
   //   label: "Customer Support",
