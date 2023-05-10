@@ -2,6 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useReducer, u
 import { navigationInitialValue, navigationReducer } from "../reducer";
 import { SET_FROM, SET_TO, SET_USER_LIST, SET_USER_SELECTED } from "../data/_actions";
 import * as Location from "expo-location";
+import {GOOGLE_API_KEY} from "@env";
 
 const NavigationContext = createContext({
   ...navigationInitialValue,
@@ -59,6 +60,7 @@ export const NavigationProvider = ({ children }) => {
 
   
   const fetchLocation = useCallback(async () => {
+    Location.setGoogleApiKey(GOOGLE_API_KEY)
     let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
       // setErrorMsg("Permission to access location was denied");
