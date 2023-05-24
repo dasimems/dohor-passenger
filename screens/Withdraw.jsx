@@ -1,5 +1,5 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { BankCard, BankList, Button, FormInputField, LoggedInContainer, Logo, Nav, TransactionCard } from "../components";
 import { blackColor, dangerColor, grayColor, infoColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
@@ -12,6 +12,8 @@ import { Coin, CreditCardIcon, WalletBackground, WalletBanner } from "../assets/
 
 const Header = () => {
     const {goBack, navigate} = useNavigation();
+
+    
     return(
 
         <>
@@ -76,11 +78,14 @@ const Header = () => {
 
 const Withdraw = () => {
   const { navigate, goBack } = useNavigation();
+  const [bank, setBank] = useState("")
+
   return (
     <LoggedInContainer showBackFunction headerText="Payment Methods" >
 
         <View style={{
-            flex: 1
+            flex: 1,
+            paddingBottom: 15
             
         }}>
 
@@ -98,59 +103,10 @@ const Withdraw = () => {
 
 
                 <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
-                    gap: 25
+                    gap: 15
                 }}>
 
-                    <TouchableOpacity onPress={()=>{
-
-                        
-                    }} style={{
-                        paddingVertical: 15,
-                        alignItems: "center",
-                        flexDirection: "row",
-                        justifyContent: "space-between"
-                    }}>
-
-                        <View style={{
-                            flexDirection: "row",
-                            gap: 15,
-                            alignItems: "center",
-
-                        }}>
-
-                            <Money size={28} />
-
-                            <View style={{
-                                gap: 4
-
-                            }}>
-
-                                <Text style={{
-                                    fontFamily: lato.black.default
-                                }}>Cash</Text>
-
-                            </View>
-                        </View>
-                        
-                        <View style={{
-                            width: 15,
-                            height: 15,
-                            backgroundColor: blackColor.opacity100,
-                            borderRadius: 50,
-                            padding: 3
-                        }}>
-
-                            {<View style={{
-                                width: "100%",
-                                height: "100%",
-                                backgroundColor: primaryColor.default,
-                                borderRadius: 100
-                            }}></View>}
-
-                        </View>
-                    </TouchableOpacity>
-
-                    <BankList />
+                    <BankList onChange={(bank)=>{setBank(bank)}} />
 
                     <TouchableOpacity onPress={()=>{
                         navigate(NavNames.AddCard.name)
@@ -185,6 +141,22 @@ const Withdraw = () => {
                 </ScrollView>
 
             </View>
+
+            <TouchableOpacity style={{
+                paddingVertical: 17,
+                paddingHorizontal: 20,
+                backgroundColor: bank && bank !== "" ? primaryColor.default : primaryColor.opacity700,
+                borderRadius: 10,
+                justifyContent: "center",
+                alignItems: "center"
+
+                
+            }}>
+                <Text style={{
+                    color: bank && bank !== ""? whiteColor.default : whiteColor.opacity600,
+                    fontFamily: lato.bold.default
+                }}>Continue</Text>
+            </TouchableOpacity>
            
 
         </View>

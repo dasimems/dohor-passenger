@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
-import { blackColor, whiteColor } from '../../assets/colors'
+import { blackColor, primaryColor, successColor, whiteColor } from '../../assets/colors'
 import MapView, {Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import useNavigationContext from '../../context/navigationContext';
 import AnimatedLottieView from 'lottie-react-native';
@@ -28,13 +28,6 @@ const Map = () => {
 
   }
 
-  useEffect(()=>{
-    if(!from){
-      fetchLocation();
-    }
-
-    
-  }, [from])
 
   useEffect(()=>{
 
@@ -47,6 +40,15 @@ const Map = () => {
 
   },[from, fitOnce])
   
+  
+  useEffect(()=>{
+    if(!from){
+      fetchLocation();
+    }
+
+    
+  }, [from])
+
   return (
     <View style={{
         flex: 1,
@@ -94,6 +96,9 @@ const Map = () => {
             origin={{latitude: from?.latitude, longitude: from?.longitude}}
             destination={{latitude: to?.latitude, longitude: to?.longitude}}
             apikey={GOOGLE_API_KEY}
+            resetOnChange={false}
+            strokeWidth={5}
+            strokeColor={successColor.default}
             // mode="driving"
           />}
 

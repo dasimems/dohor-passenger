@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\isaac\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-chart-kit
+  C:\Program Files\nodejs\node.exe C:\Users\isaac\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native@0.71.8
 
 PATH: 
-  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\xampp\php;C:\Usersisaac\AppData\Local\Android\Sdk\platform-tools;C:\Usersisaac\AppData\Local\Android\Sdk;C:\Program Files\cmder;C:\Program Files\Git\cmd;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\gnupg\bin;C:\Users\isaac\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\isaac\AppData\Local\Programs\Python\Python311\;C:\Users\isaac\AppData\Local\Microsoft\WindowsApps;C:\Users\isaac\AppData\Roaming\npm;C:\Users\isaac\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\isaac\AppData\Local\Android\Sdk;C:\Users\isaac\AppData\Roaming\Composer\vendor\bin
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\xampp\php;C:\Usersisaac\AppData\Local\Android\Sdk\platform-tools;C:\Usersisaac\AppData\Local\Android\Sdk;C:\Program Files\cmder;C:\Program Files\Git\cmd;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\gnupg\bin;C:\Users\isaac\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\isaac\AppData\Local\Programs\Python\Python311\;C:\Users\isaac\AppData\Local\Microsoft\WindowsApps;C:\Users\isaac\AppData\Roaming\npm;C:\Users\isaac\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\isaac\AppData\Local\Android\Sdk;C:\Users\isaac\AppData\Roaming\Composer\vendor\bin
 
 Yarn version: 
   1.22.19
@@ -14,8 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+  Error: connect ECONNABORTED 104.16.20.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1300:16)
 
 npm manifest: 
   {
@@ -52,9 +52,14 @@ npm manifest:
       "prop-types": "^15.8.1",
       "react": "18.2.0",
       "react-native": "0.71.7",
+      "react-native-chart-kit": "^6.12.0",
+      "react-native-dotenv": "^3.4.8",
       "react-native-element-dropdown": "^2.9.0",
+      "react-native-google-places-autocomplete": "^2.5.1",
       "react-native-iconly": "^1.0.12",
       "react-native-maps": "1.3.2",
+      "react-native-maps-directions": "^1.9.0",
+      "react-native-places-input": "^1.1.7",
       "react-native-safe-area-context": "4.5.0",
       "react-native-screens": "~3.20.0",
       "react-native-svg": "13.4.0",
@@ -3302,6 +3307,11 @@ Lockfile:
       domelementtype "^2.3.0"
       domhandler "^5.0.1"
   
+  dotenv@^16.0.3:
+    version "16.0.3"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
+    integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
+  
   ee-first@1.1.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -4714,6 +4724,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
     integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
   
+  lodash.isequal@^4.5.0:
+    version "4.5.0"
+    resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+    integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
+  
   lodash.throttle@^4.1.1:
     version "4.1.1"
     resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
@@ -5780,6 +5795,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
     integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
   
+  paths-js@^0.4.10:
+    version "0.4.11"
+    resolved "https://registry.yarnpkg.com/paths-js/-/paths-js-0.4.11.tgz#b2a9d5f94ee9949aa8fee945f78a12abff44599e"
+    integrity sha512-3mqcLomDBXOo7Fo+UlaenG6f71bk1ZezPQy2JCmYHy2W2k5VKpP+Jbin9H0bjXynelTbglCqdFhSEkeIkKTYUA==
+  
   picocolors@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
@@ -5831,6 +5851,11 @@ Lockfile:
     version "5.0.0"
     resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-5.0.0.tgz#e79dd2b215767fd9c04561c01236df960bce7fbb"
     integrity sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==
+  
+  point-in-polygon@^1.0.1:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/point-in-polygon/-/point-in-polygon-1.1.0.tgz#b0af2616c01bdee341cbf2894df643387ca03357"
+    integrity sha512-3ojrFwjnnw8Q9242TzgXuTD+eKiutbzyslcq1ydfu82Db2y+Ogbmyrkpv0Hgj31qwT3lbS9+QAAO/pIQM35XRw==
   
   posix-character-classes@^0.1.0:
     version "0.1.1"
@@ -5898,7 +5923,7 @@ Lockfile:
       kleur "^3.0.3"
       sisteransi "^1.0.5"
   
-  prop-types@*, prop-types@^15.8.1:
+  prop-types@*, prop-types@^15.6.0, prop-types@^15.7.2, prop-types@^15.8.1:
     version "15.8.1"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
     integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -5931,6 +5956,11 @@ Lockfile:
     integrity sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==
     dependencies:
       side-channel "^1.0.4"
+  
+  qs@~6.9.1:
+    version "6.9.7"
+    resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.7.tgz#4610846871485e1e048f44ae3b94033f0e675afe"
+    integrity sha512-IhMFgUmuNpyRfxA90umL7ByLlgRXu6tIfKPpF5TmcfRLlLCckfP/g3IQmju6jjpu+Hh8rA+2p6A27ZSPOOHdKw==
   
   query-string@^7.1.3:
     version "7.1.3"
@@ -6005,6 +6035,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
     integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
   
+  react-native-chart-kit@^6.12.0:
+    version "6.12.0"
+    resolved "https://registry.yarnpkg.com/react-native-chart-kit/-/react-native-chart-kit-6.12.0.tgz#187a4987a668a85b7e93588c248ed2c33b3a06f6"
+    integrity sha512-nZLGyCFzZ7zmX0KjYeeSV1HKuPhl1wOMlTAqa0JhlyW62qV/1ZPXHgT8o9s8mkFaGxdqbspOeuaa6I9jUQDgnA==
+    dependencies:
+      lodash "^4.17.13"
+      paths-js "^0.4.10"
+      point-in-polygon "^1.0.1"
+  
   react-native-codegen@^0.71.5:
     version "0.71.5"
     resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.71.5.tgz#454a42a891cd4ca5fc436440d301044dc1349c14"
@@ -6015,12 +6054,28 @@ Lockfile:
       jscodeshift "^0.13.1"
       nullthrows "^1.1.1"
   
+  react-native-dotenv@^3.4.8:
+    version "3.4.8"
+    resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-3.4.8.tgz#42284070a9994076cd700805c2dd28051c9e1432"
+    integrity sha512-fg9F8X/cG1kDTwRLgLz3t+AMbsULoFHbUVltdQarmrJ3kNllD1Zq7ZgY85bp8BnPwk0DnYQzKbooiLsUoKd10w==
+    dependencies:
+      dotenv "^16.0.3"
+  
   react-native-element-dropdown@^2.9.0:
     version "2.9.0"
     resolved "https://registry.yarnpkg.com/react-native-element-dropdown/-/react-native-element-dropdown-2.9.0.tgz#c218ab512bd8be69fa0ac70462293863f8cfd527"
     integrity sha512-2Y/bmoFPTdKOUXbYloEKpMTWYE2VHrvva/5tgEuHqAlfAtGGr3r/ob0L0YYH1am5N0n1PKo3+eLf0c79QUSzYw==
     dependencies:
       lodash "^4.17.21"
+  
+  react-native-google-places-autocomplete@^2.5.1:
+    version "2.5.1"
+    resolved "https://registry.yarnpkg.com/react-native-google-places-autocomplete/-/react-native-google-places-autocomplete-2.5.1.tgz#93d5ac3e34e3e8f594aae5349f9e2d3e0b87484e"
+    integrity sha512-2FZZomogB18mLSC/N39UcpiVoJn/fFIpud1M2KZMom/pJhSMgfqV4qLjHuzaDyYIl7KBz/zpGDcbYgmtvvpkHQ==
+    dependencies:
+      lodash.debounce "^4.0.8"
+      prop-types "^15.7.2"
+      qs "~6.9.1"
   
   react-native-gradle-plugin@^0.71.17:
     version "0.71.17"
@@ -6034,12 +6089,27 @@ Lockfile:
     dependencies:
       react-native-svg "^12.1.0"
   
+  react-native-maps-directions@^1.9.0:
+    version "1.9.0"
+    resolved "https://registry.yarnpkg.com/react-native-maps-directions/-/react-native-maps-directions-1.9.0.tgz#63ae8e8b36499042a658e43cd4836ac89aab8b7d"
+    integrity sha512-68SrMOUg4WQ5PmpS9sNOTZaYtdyVYJnnjQOOhABrgiKnb5BXCZRU2gDoS11gYf23hjUBjq8JXzgfn37WcINLwA==
+    dependencies:
+      lodash.isequal "^4.5.0"
+      prop-types "^15.6.0"
+  
   react-native-maps@1.3.2:
     version "1.3.2"
     resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-1.3.2.tgz#8e30bfd9d934de02827253e5cde6c08a04f6356c"
     integrity sha512-NB7HGRZOgxxXCWzrhIVucx/bsrEWANvk3DLci1ov4P9MQnEVQYQCCkTxsnaEvO191GeBOCRDyYn6jckqbfMtmg==
     dependencies:
       "@types/geojson" "^7946.0.8"
+  
+  react-native-places-input@^1.1.7:
+    version "1.1.7"
+    resolved "https://registry.yarnpkg.com/react-native-places-input/-/react-native-places-input-1.1.7.tgz#8e36fdd87e1f855d72029f7e2b670f7832a2872c"
+    integrity sha512-Gxl6bNFGK8vCagTRjONKspdgpGs+pGSu/Y3Bp7XZqFaowekhDdQYfs6yXe+WZofH/EmNzFH40jKc83URvqYPXQ==
+    dependencies:
+      prop-types "^15.7.2"
   
   react-native-safe-area-context@4.5.0:
     version "4.5.0"
