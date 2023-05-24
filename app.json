@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.dasimems.dohor",
+      "bundleIdentifier": "com.dohro.passenger",
       "buildNumber": "1.0.0",
       "config": {
         "googleMapsApiKey": "AIzaSyCAktv_D_Ij3G9SVjhO2ClYchZzWFuoDas"
@@ -30,7 +30,7 @@
       }
     },
     "android": {
-      "package": "com.dasimems.dohor",
+      "package": "com.dohro.passenger",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -49,7 +49,11 @@
         "android.permission.RECORD_AUDIO",
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION",
-        "ACCESS_BACKGROUND_LOCATION"
+        "ACCESS_BACKGROUND_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.ACCESS_BACKGROUND_LOCATION"
       ]
     },
     "web": {
@@ -59,24 +63,23 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Allow $(Dohor) to access your camera.",
-          "microphonePermission": "Allow $(Dohor) to access your microphone."
+          "cameraPermission": "Allow Dohor to access your camera.",
+          "microphonePermission": "Allow Dohor to access your microphone."
         }
       ],
-
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow $(Dohor) to use your location.",
-          "locationAlwaysPermission": "Allow $(Dohor) to use your location.",
-          "isIosBackgroundLocationEnabled": "Allow $(Dohor) to use your location.",
-          "isAndroidBackgroundLocationEnabled": "Allow $(Dohor) to use your location."
+          "locationAlwaysAndWhenInUsePermission": "Allow Dohor to use your location.",
+          "locationAlwaysPermission": "Allow Dohor to use your location.",
+          "isIosBackgroundLocationEnabled": "Allow Dohor to use your location.",
+          "isAndroidBackgroundLocationEnabled": "Allow Dohor to use your location."
         }
       ]
     ],
     "extra": {
       "eas": {
-        "projectId": "07e4c644-0697-4325-ae3c-76b76c35ac36"
+
       }
     }
   }

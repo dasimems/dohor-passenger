@@ -87,7 +87,7 @@ const Map = () => {
           {to && <Marker
             coordinate={{latitude: to && to.latitude? to.latitude: 37.78825, longitude: to && to.longitude? to.longitude: -122.4324}}
             title="Your Destination"
-            description="Your Destination"
+            description={to.description? to.description : "Your Destination"}
           /> }
 
           {from && to && <MapViewDirections

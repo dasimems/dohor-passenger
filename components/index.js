@@ -21,6 +21,7 @@ import ScreenContainer from "./general/ScreenContainer"
 import Stars from "./general/Stars"
 import Stats from "./general/Stats"
 import StatCard from "./general/inner/StatCard"
+import LocationSearch from "./navigation/LocationSearch"
 import Map from "./navigation/Map"
 import OnlineRequest from "./navigation/OnlineRequest"
 import Passengers from "./navigation/Passengers"
@@ -81,6 +82,7 @@ export {
     ReviewCard,
     ReviewList,
     RatingBar,
-    EarningChart
+    EarningChart,
+    LocationSearch
 
 }
